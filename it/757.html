@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://fangtang.net/it/757.html"><title>无插件给博客加个说说 | 方糖博客</title><meta name="description" content="现在很多博客上都添加了说说或类似的页面，各种样式的都有，看着我心痒痒，真想逮个空给俺那小破站也“武装”一下。看 [&#38;hellip;]
+"><script>
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script><link rel="stylesheet" href="/_astro/_slug_.D6w0NibI.css"><script type="module" src="/_astro/page.V2R8AmkL.js"></script></head> <body class="min-h-screen bg-white dark:bg-dark text-gray-900 dark:text-gray-100 transition-colors flex flex-col"> <header class="sticky top-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800"> <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold hover:text-primary">方糖博客</a> <nav class="hidden md:flex items-center gap-4"> <a href="/" class="hover:text-primary">首页</a> <div class="relative group"> <button class="hover:text-primary flex items-center gap-1">分类 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button> <div class="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"> <a href="/say.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">说说</a> <a href="/it.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">IT 技术</a> <a href="/my.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">生活点滴</a> </div> </div> <a href="/tags.html" class="hover:text-primary">标签</a> <a href="/archive.html" class="hover:text-primary">归档</a><a href="/guestbook.html" class="hover:text-primary">留言</a><a href="/about.html" class="hover:text-primary">关于</a> <a href="/rss.xml" class="p-2 hover:text-primary" title="RSS"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg> </a> <a href="/search.html" class="p-2 hover:text-primary" title="搜索"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> </a> <button id="theme-toggle" class="p-2 hover:text-primary" title="切换主题"> <svg id="sun-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><path d="M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg> <svg id="moon-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </nav> <div class="flex md:hidden items-center gap-2"> <a href="/search.html" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a> <button id="mobile-menu-btn" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button> </div> </div> <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800 p-4 space-y-2 text-center"> <a href="/" class="block py-2">首页</a> <a href="/say.html" class="block py-2">说说</a> <a href="/it.html" class="block py-2">IT 技术</a> <a href="/my.html" class="block py-2">生活点滴</a> <a href="/tags.html" class="block py-2">标签</a> <a href="/archive.html" class="block py-2">归档</a><a href="/guestbook.html" class="block py-2">留言</a><a href="/about.html" class="block py-2">关于</a> </div> </header> <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full"> <article> <!-- 文章头部 --> <header class="mb-8"> <h1 class="text-3xl font-bold mb-4">无插件给博客加个说说</h1> <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400"> <time datetime="2024-01-10T21:34:10"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 2024年1月10日 </time> <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs"> IT网络 </span> </div> </header> <!-- 文章内容 --> <div class="prose dark:prose-invert max-w-none">
+<p>现在很多博客上都添加了说说或类似的页面，各种样式的都有，看着我心痒痒，真想逮个空给俺那小破站也“武装”一下。看了老张和阿杰等都是调用Memos，样式不错，是俺喜欢的，我也照样画葫芦似的去搭了个Memos（这东西是不错，把它当作随手记也好，当作个人小微博也罢，挺好），但目前尚没有合适的主机跑Docker，要不咱就无插件来一个………………</p>
+
+
+
+<!--more-->
+
+
+
+<p></p>
+
+
+
+<p>在借助Chatgpt的帮忙下，生成一些代码还是蛮轻松的，本站的归档、标签、友链都是在“家伙”的帮忙下搞定的，要不然就我这榆木脑袋估计还得折腾好久。大致的步骤如下：</p>
+
+
+
+<ul class="wp-block-list">
+<li>在文章分类目录下新建一个说说，slug写为：<code>shuoshuo</code></li>
+
+
+
+<li>在主题的<code>functions.php</code>中添加如下代码：</li>
+</ul>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">/*屏蔽说说在首页中显示*/
+function exclude_category_from_home($query) {
+    if ($query-&gt;is_home() &amp;&amp; $query-&gt;is_main_query()) {
+        $excluded_category = get_category_by_slug('shuoshuo');
+        $excluded_category_id = $excluded_category-&gt;term_id;
+        $query-&gt;set('cat', '-' . $excluded_category_id);
+    }
+}
+add_action('pre_get_posts', 'exclude_category_from_home');</code></pre>
+
+
+
+<ul class="wp-block-list">
+<li>新建一个PHP文件，名字可以用<code>template-shuoshuo</code>命名，并在其中添加以下代码：</li>
+</ul>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">&lt;?php
+/*
+Template Name: 说说
+*/
+
+get_header(); // 调用主题的header部分
+?&gt;
+
+&lt;div id="primary" class="content-area"&gt;
+    &lt;main id="main" class="site-main" role="main"&gt;
+
+        &lt;?php
+        // 获取"说说"分类的信息
+        $category = get_category_by_slug('shuoshuo');
+
+        // 查询属于"说说"分类的文章列表
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        $args = array(
+            'post_type' =&gt; 'post',
+            'posts_per_page' =&gt; 10,
+            'paged' =&gt; $paged,
+            'cat' =&gt; $category-&gt;term_id
+        );
+        $query = new WP_Query($args);
+
+        if ($query-&gt;have_posts()) {
+            while ($query-&gt;have_posts()) {
+                $query-&gt;the_post();
+                // 显示每篇文章的内容
+                ?&gt;
+                &lt;article id="post-&lt;?php the_ID(); ?&gt;" &lt;?php post_class(); ?&gt;&gt;
+
+                &lt;div class="author-info"&gt;
+
+                   &lt;div class="author-meta"&gt;
+                   &lt;span class="author-name"&gt;&lt;?php the_author(); ?&gt;&lt;/span&gt;
+                   &lt;span class="post-date"&gt;&lt;?php the_date(); ?&gt;&lt;/span&gt;
+                   &lt;/div&gt;
+                &lt;/div&gt;
+
+                    &lt;div class="entry-content"&gt;
+                        &lt;?php the_content(); ?&gt;
+
+                    &lt;/div&gt;
+
+                    &lt;footer class="entry-footer"&gt;
+                        &lt;?php if (comments_open() || get_comments_number()) : ?&gt;
+                            &lt;div class="comments-link"&gt;
+                                &lt;?php comments_popup_link(__('来个评论', 'your-theme'), __('1 Comment', 'your-theme'), __('% Comments', 'your-theme')); ?&gt;
+
+                            &lt;/div&gt;
+                            &lt;br&gt;
+                        &lt;?php endif; ?&gt;
+                    &lt;/footer&gt;
+                &lt;/article&gt;
+                &lt;?php
+            }
+
+            // 显示翻页链接
+            echo '&lt;div class="pagination"&gt;';
+            echo paginate_links(array(
+                'total' =&gt; $query-&gt;max_num_pages
+            ));
+            echo '&lt;/div&gt;';
+        }
+        ?&gt;
+
+    &lt;/main&gt;
+&lt;/div&gt;
+
+&lt;?php
+get_footer(); // 调用主题的footer部分
+</code></pre>
+
+
+
+<p>保存并上传到主题根目录下</p>
+
+
+
+<ul class="wp-block-list">
+<li>加到<code>Wordpress</code>后台，在<code>页面</code>中新建一个页面，模板选择刚才建立的说说模板，以<code>说说</code>为名保存后，再在菜单中添加刚才建立的页面，保存后再刷新首页，就可以去看看效果如何了。当然别忘了新建一篇文章，名字随意，因为说说页面只调用文章的内容。</li>
+</ul>
+
+
+
+<p>本文所提到的无插件实现说说功能，原理就是在首页中屏蔽一个分类输出，并将这个分类按要求输出到指定的页面中去，暂未进么美化（本个对CSS也就那点水平，实在是……不能说233），不需要评论的话也可以去掉（评论点进去的界面是不是很眼熟——这不就是文章页嘛）。至于调用Memos回头哪天再找个主机研究研究，说不定啥时也就挤上了<br>
+个人看完感觉也没啥好玩的，像我这么懒的，博客更新都慢，还会经常去更新Memos？估计难，没那习惯呀，所以我觉得真有这功夫还是踏实坐下来水几篇是不是更带劲？<br>
+<strong>2024-01-14 最终还是改成Memos了，用这玩意手机端就可以发送，方便。目前也调试好了，那就开始用吧。</strong></p>
+</div> <!-- 评论 --> <div id="artalk-container" class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700"> <div id="Comments"></div> </div> <!-- Artalk 样式与脚本 --> <link href="https://my-blog.s3.bitiful.net/Artalk/Artalk.css" rel="stylesheet"> <script src="https://my-blog.s3.bitiful.net/Artalk/Artalk.js"></script> <script>
+  function initArtalk() {
+    const container = document.querySelector('#Comments');
+    if (!container) return;
+
+    if (window.artalk) {
+      window.artalk.destroy();
+    }
+
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    // 初始化 Artalk
+    window.artalk = Artalk.init({
+      el: '#Comments',
+      pageKey: window.location.pathname,
+      pageTitle: document.title,
+      server: 'https://talk.057000.xyz',
+      site: '方糖博客',
+      darkMode: isDark,
+      // 增加调试模式，方便在控制台看到更多信息
+      pv: true
+    });
+  }
+
+  // 适配 Astro 生命周期
+  document.addEventListener('astro:page-load', initArtalk);
+  
+  // 确保首次加载也执行
+  if (document.readyState === 'complete') {
+    initArtalk();
+  } else {
+    window.addEventListener('load', initArtalk);
+  }
+
+  // 主题切换监听
+  const observer = new MutationObserver(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (window.artalk) window.artalk.setDarkMode(isDark);
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+</script> </article> </main> <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-gray-500 text-sm"> <p>&copy; 2012-2026 方糖博客 · 基于 Astro + WordPress</p> <p><span class="mobile-hide"> <a href="https://icp.gov.moe/?keyword=20229988" target="_blank">萌ICP备20229988号</a> · 托管于：<a href="https://hostdzire.com/billing/index.php" target="_blank" rel="nofollow"> HostDZire </a> · 使用<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="nofollow"> 又拍云 </a></span></p> </footer> <button id="back-to-top" style="display: none;" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary/80 transition-all z-50 items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg> </button> <script>
+      (function() {
+        const themeToggle = () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          updateIcons();
+        };
+        const updateIcons = () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          const sun = document.getElementById('sun-icon');
+          const moon = document.getElementById('moon-icon');
+          if (sun) sun.classList.toggle('hidden', !isDark);
+          if (moon) moon.classList.toggle('hidden', isDark);
+        };
+        document.getElementById('theme-toggle')?.addEventListener('click', themeToggle);
+        updateIcons();
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.toggle('hidden'));
+        const btt = document.getElementById('back-to-top');
+        if (btt) {
+          window.addEventListener('scroll', () => {
+            if (window.innerWidth >= 768 && window.pageYOffset > 300) btt.style.display = 'flex';
+            else btt.style.display = 'none';
+          });
+          btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      })();
+    </script> </body> </html>

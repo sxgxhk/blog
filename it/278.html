@@ -1,0 +1,246 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://fangtang.net/it/278.html"><title>阿里云可支持系统盘扩容及收费策略说明 | 方糖博客</title><meta name="description" content="刚收到邮件通知说阿里云可以系统盘扩容，不过好像要收费了，具体的邮件内容如下： 尊敬的阿里云用户： 您好！阿里云 [&#38;hellip;]
+"><script>
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script><link rel="stylesheet" href="/_astro/_slug_.D6w0NibI.css"><script type="module" src="/_astro/page.V2R8AmkL.js"></script></head> <body class="min-h-screen bg-white dark:bg-dark text-gray-900 dark:text-gray-100 transition-colors flex flex-col"> <header class="sticky top-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800"> <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold hover:text-primary">方糖博客</a> <nav class="hidden md:flex items-center gap-4"> <a href="/" class="hover:text-primary">首页</a> <div class="relative group"> <button class="hover:text-primary flex items-center gap-1">分类 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button> <div class="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"> <a href="/say.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">说说</a> <a href="/it.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">IT 技术</a> <a href="/my.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">生活点滴</a> </div> </div> <a href="/tags.html" class="hover:text-primary">标签</a> <a href="/archive.html" class="hover:text-primary">归档</a><a href="/guestbook.html" class="hover:text-primary">留言</a><a href="/about.html" class="hover:text-primary">关于</a> <a href="/rss.xml" class="p-2 hover:text-primary" title="RSS"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg> </a> <a href="/search.html" class="p-2 hover:text-primary" title="搜索"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> </a> <button id="theme-toggle" class="p-2 hover:text-primary" title="切换主题"> <svg id="sun-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><path d="M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg> <svg id="moon-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </nav> <div class="flex md:hidden items-center gap-2"> <a href="/search.html" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a> <button id="mobile-menu-btn" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button> </div> </div> <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800 p-4 space-y-2 text-center"> <a href="/" class="block py-2">首页</a> <a href="/say.html" class="block py-2">说说</a> <a href="/it.html" class="block py-2">IT 技术</a> <a href="/my.html" class="block py-2">生活点滴</a> <a href="/tags.html" class="block py-2">标签</a> <a href="/archive.html" class="block py-2">归档</a><a href="/guestbook.html" class="block py-2">留言</a><a href="/about.html" class="block py-2">关于</a> </div> </header> <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full"> <article> <!-- 文章头部 --> <header class="mb-8"> <h1 class="text-3xl font-bold mb-4">阿里云可支持系统盘扩容及收费策略说明</h1> <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400"> <time datetime="2016-01-16T13:46:21"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 2016年1月16日 </time> <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs"> IT网络 </span> </div> </header> <!-- 文章内容 --> <div class="prose dark:prose-invert max-w-none"><p>刚收到邮件通知说阿里云可以系统盘扩容，不过好像要收费了，具体的邮件内容如下：<br />
+尊敬的阿里云用户：<br />
+您好！阿里云ECS系统盘扩容将于2016年1月15日正式上线，您将获得更大容量的系统盘，以满足您业务对系统盘容量的诉求。<br />
+系统盘扩容上线后，将有以下变化：<br />
+1.支持在购买ECS云服务器时指定系统盘容量的大小，不再局限于镜像的容量（Linux 20GB/Windows 40GB），系统盘可选的容量范围为40GB~500GB；<!--more--><br />
+2.支持更换系统盘时指定系统盘容量的大小，以便您可获得更多的系统盘容量；<br />
+3.购买ECS云服务器或更换系统盘时，系统盘容量至少是40GB；<br />
+4.系统盘将不再免费赠送，需按照系统盘容量付费；同时对ECS云服务器做相应的价格下调；<br />
+更多详细信息 点击查看<br />
+阿里云计算有限公司<br />
+点击去之后看的就是相关系统盘扩容及收费策略说明，具体的如下：</p>
+<p class="Alt0M" align="center">系统盘扩容及收费策略说明</p>
+<p class="Alt0M">当前购买ECS云服务器时，系统盘是随ECS云服务器免费赠送的，且有Linux 20GB、windows 40GB的容量限制；由于部分应用程序必须安装在系统盘，20GB/40GB的系统盘容量限制无法满足业务对存储容量的诉求；同时，业务运行一段时间后也需要更大的系统盘容量。</p>
+<p class="Alt0M">因此，我们将推出系统盘扩容功能，以便用户的业务系统能获得更大的系统盘容量，随着系统盘扩容的上线，有以下变化：</p>
+<ul>
+<li class="Alt0M">　　　　支持在购买ECS云服务器时指定系统盘容量的大小，不再局限于镜像的容量（Linux 20GB/Windows 40GB），系统盘可选的容量范围为40GB~500GB；</li>
+<li class="Alt0M">　　　 支持更换系统盘时指定系统盘容量的大小，以便存量的用户可获得更多的系统盘容量；</li>
+<li class="Alt0M">　　　　　购买ECS云服务器或更换系统盘时，系统盘容量至少是40GB；</li>
+<li class="Alt0M">　　　　　系统盘将不再免费赠送，需按照系统盘容量付费。</li>
+</ul>
+<p class="Alt0M">考虑到系统盘收费会对用户购买ECS云服务器总体成本的影响，因此实行系统盘收费的同时将对CPU&amp;内存价格做相应的调整，方案如下：</p>
+<ul>
+<li class="Alt0M">　　　　对于非I/O优化实例，CPU&amp;内存下调40GB普通云盘的价格；对于I/O优化实例，CPU&amp;内存下调40GB高效云盘的价格；</li>
+<li class="Alt0M">　　　　　如果选择起配40GB的普通云盘/高效云盘，购买ECS云服务器的成本相比以前不变；</li>
+</ul>
+<p class="Alt0M">所有Region的CPU&amp;内存价格下调方案如下：</p>
+<div>
+<table border="0" width="593" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="281">
+<p align="center">实例类型</p>
+</td>
+<td width="132">
+<p align="center">搭配的系统盘类型</p>
+</td>
+<td width="94">
+<p align="center">起配40GB系统盘收费（元/月）</p>
+</td>
+<td width="85">
+<p align="center">CPU+MEM降价(元/月)</p>
+</td>
+</tr>
+<tr>
+<td width="281">
+<p align="left">杭州/北京/上海/深圳 -- 系列Ⅰ(非I/O优化)</p>
+</td>
+<td width="132">
+<p align="center">普通云盘</p>
+</td>
+<td width="94">
+<p align="center">12元</p>
+</td>
+<td width="85">
+<p align="center">12元</p>
+</td>
+</tr>
+<tr>
+<td width="281">
+<p align="left">杭州/北京/上海/深圳--系列Ⅰ(I/O优化)&amp;系列Ⅱ</p>
+</td>
+<td width="132">
+<p align="center">高效云盘/SSD云盘</p>
+</td>
+<td width="94">
+<p align="center">20元/40元</p>
+</td>
+<td width="85">
+<p align="center">20元</p>
+</td>
+</tr>
+<tr>
+<td width="281">
+<p align="left">青岛--系列Ⅰ（非I/O优化）</p>
+</td>
+<td width="132">
+<p align="center">普通云盘</p>
+</td>
+<td width="94">
+<p align="center">10.8元</p>
+</td>
+<td width="85">
+<p align="center">10.8元</p>
+</td>
+</tr>
+<tr>
+<td width="281">
+<p align="left">青岛--系列Ⅰ（I/O优化）&amp; 系列Ⅱ</p>
+</td>
+<td width="132">
+<p align="center">高效云盘/SSD云盘</p>
+</td>
+<td width="94">
+<p align="center">20元/40元</p>
+</td>
+<td width="85">
+<p align="center">20元</p>
+</td>
+</tr>
+<tr>
+<td width="281">
+<p align="left">香港--系列Ⅰ</p>
+</td>
+<td width="132">
+<p align="center">普通云盘</p>
+</td>
+<td width="94">
+<p align="center">12元</p>
+</td>
+<td width="85">
+<p align="center">12元</p>
+</td>
+</tr>
+<tr>
+<td width="281">
+<p align="left">香港--系列Ⅰ（I/O优化）&amp;系列Ⅱ</p>
+</td>
+<td width="132">
+<p align="center">高效云盘/SSD云盘</p>
+</td>
+<td width="94">
+<p align="center">24元/56元</p>
+</td>
+<td width="85">
+<p align="center">24元</p>
+</td>
+</tr>
+<tr>
+<td width="281">
+<p align="left">美国硅谷--系列Ⅰ</p>
+</td>
+<td width="132">
+<p align="center">普通云盘</p>
+</td>
+<td width="94">
+<p align="center">20元</p>
+</td>
+<td width="85">
+<p align="center">20元</p>
+</td>
+</tr>
+<tr>
+<td width="281">
+<p align="left">美国硅谷--系列Ⅰ（I/O优化）&amp;系列Ⅱ</p>
+</td>
+<td width="132">
+<p align="center">高效云盘/SSD云盘</p>
+</td>
+<td width="94">
+<p align="center">22.4元/64元</p>
+</td>
+<td width="85">
+<p align="center">22.4元</p>
+</td>
+</tr>
+<tr>
+<td width="281">
+<p align="left">新加坡--系列Ⅰ（I/O优化）&amp;系列Ⅱ</p>
+</td>
+<td width="132">
+<p align="center">高效云盘/SSD云盘</p>
+</td>
+<td width="94">
+<p align="center">24元/72元</p>
+</td>
+<td width="85">
+<p align="center">24元</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="Alt0M">
+<p class="Alt0M" align="right">2016年1月14日</p>
+<p>云上的日子算是开始好过了，还是？再待观察吧。</p>
+</div> <!-- 评论 --> <div id="artalk-container" class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700"> <div id="Comments"></div> </div> <!-- Artalk 样式与脚本 --> <link href="https://my-blog.s3.bitiful.net/Artalk/Artalk.css" rel="stylesheet"> <script src="https://my-blog.s3.bitiful.net/Artalk/Artalk.js"></script> <script>
+  function initArtalk() {
+    const container = document.querySelector('#Comments');
+    if (!container) return;
+
+    if (window.artalk) {
+      window.artalk.destroy();
+    }
+
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    // 初始化 Artalk
+    window.artalk = Artalk.init({
+      el: '#Comments',
+      pageKey: window.location.pathname,
+      pageTitle: document.title,
+      server: 'https://talk.057000.xyz',
+      site: '方糖博客',
+      darkMode: isDark,
+      // 增加调试模式，方便在控制台看到更多信息
+      pv: true
+    });
+  }
+
+  // 适配 Astro 生命周期
+  document.addEventListener('astro:page-load', initArtalk);
+  
+  // 确保首次加载也执行
+  if (document.readyState === 'complete') {
+    initArtalk();
+  } else {
+    window.addEventListener('load', initArtalk);
+  }
+
+  // 主题切换监听
+  const observer = new MutationObserver(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (window.artalk) window.artalk.setDarkMode(isDark);
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+</script> </article> </main> <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-gray-500 text-sm"> <p>&copy; 2012-2026 方糖博客 · 基于 Astro + WordPress</p> <p><span class="mobile-hide"> <a href="https://icp.gov.moe/?keyword=20229988" target="_blank">萌ICP备20229988号</a> · 托管于：<a href="https://hostdzire.com/billing/index.php" target="_blank" rel="nofollow"> HostDZire </a> · 使用<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="nofollow"> 又拍云 </a></span></p> </footer> <button id="back-to-top" style="display: none;" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary/80 transition-all z-50 items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg> </button> <script>
+      (function() {
+        const themeToggle = () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          updateIcons();
+        };
+        const updateIcons = () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          const sun = document.getElementById('sun-icon');
+          const moon = document.getElementById('moon-icon');
+          if (sun) sun.classList.toggle('hidden', !isDark);
+          if (moon) moon.classList.toggle('hidden', isDark);
+        };
+        document.getElementById('theme-toggle')?.addEventListener('click', themeToggle);
+        updateIcons();
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.toggle('hidden'));
+        const btt = document.getElementById('back-to-top');
+        if (btt) {
+          window.addEventListener('scroll', () => {
+            if (window.innerWidth >= 768 && window.pageYOffset > 300) btt.style.display = 'flex';
+            else btt.style.display = 'none';
+          });
+          btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      })();
+    </script> </body> </html>

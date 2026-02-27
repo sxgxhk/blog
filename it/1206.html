@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://fangtang.net/it/1206.html"><title>Memos添加评论及样式美化 | 方糖博客</title><meta name="description" content="这个标题的文章，估计在网上一搜一大把，之所以要写，只是为了日后自己再折腾时方便一些，不用再去找了，没办法，谁叫 [&#38;hellip;]
+"><script>
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script><link rel="stylesheet" href="/_astro/_slug_.D6w0NibI.css"><script type="module" src="/_astro/page.V2R8AmkL.js"></script></head> <body class="min-h-screen bg-white dark:bg-dark text-gray-900 dark:text-gray-100 transition-colors flex flex-col"> <header class="sticky top-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800"> <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold hover:text-primary">方糖博客</a> <nav class="hidden md:flex items-center gap-4"> <a href="/" class="hover:text-primary">首页</a> <div class="relative group"> <button class="hover:text-primary flex items-center gap-1">分类 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button> <div class="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"> <a href="/say.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">说说</a> <a href="/it.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">IT 技术</a> <a href="/my.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">生活点滴</a> </div> </div> <a href="/tags.html" class="hover:text-primary">标签</a> <a href="/archive.html" class="hover:text-primary">归档</a><a href="/guestbook.html" class="hover:text-primary">留言</a><a href="/about.html" class="hover:text-primary">关于</a> <a href="/rss.xml" class="p-2 hover:text-primary" title="RSS"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg> </a> <a href="/search.html" class="p-2 hover:text-primary" title="搜索"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> </a> <button id="theme-toggle" class="p-2 hover:text-primary" title="切换主题"> <svg id="sun-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><path d="M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg> <svg id="moon-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </nav> <div class="flex md:hidden items-center gap-2"> <a href="/search.html" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a> <button id="mobile-menu-btn" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button> </div> </div> <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800 p-4 space-y-2 text-center"> <a href="/" class="block py-2">首页</a> <a href="/say.html" class="block py-2">说说</a> <a href="/it.html" class="block py-2">IT 技术</a> <a href="/my.html" class="block py-2">生活点滴</a> <a href="/tags.html" class="block py-2">标签</a> <a href="/archive.html" class="block py-2">归档</a><a href="/guestbook.html" class="block py-2">留言</a><a href="/about.html" class="block py-2">关于</a> </div> </header> <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full"> <article> <!-- 文章头部 --> <header class="mb-8"> <h1 class="text-3xl font-bold mb-4">Memos添加评论及样式美化</h1> <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400"> <time datetime="2024-10-19T21:20:00"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 2024年10月19日 </time> <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs"> IT网络 </span> </div> </header> <!-- 文章内容 --> <div class="prose dark:prose-invert max-w-none">
+<p>这个标题的文章，估计在网上一搜一大把，之所以要写，只是为了日后自己再折腾时方便一些，不用再去找了，没办法，谁叫俺懒呀（从另一方面来讲，我这也是为我的博客水了一篇，计数器上又可以加1了），开始为博客除草了……</p>
+
+
+
+<!--more-->
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://fangtang.net/typecho/uploads/2024/10/86121201.webp" alt="memos.webp" title="memos.webp"/></figure>
+
+
+
+<p></p>
+
+
+
+<ul class="wp-block-list">
+<li>为Memos加上Bing随机壁纸、顺便换个字体，这个只要在“设置”--“系统”--“自定义样式”和“自定义脚本”加入相应的代码就可以了，先在“自定义样式”加入：</li>
+</ul>
+
+
+
+<pre class="wp-block-code"><code lang="css" class="language-css">.status-text{font-size:10px !important;border:none;color:rgb(156,163,175) !important;}
+.tag-span,.dark .tag-span{border: 1px solid;border-radius:6px;padding:0px 6px;color:rgb(22,163,74) !important;font-size:12px !important;-webkit-transform: scale(calc(10 / 12));transform-origin: left center;}
+.memo-content-text .link{color:rgb(22,163,74) !important;margin-right:-6px;}
+header .bg-blue-600{display:none !important;}
+.text-lg {font-size: 1rem !important;}
+.header-wrapper,.sidebar-wrapper{width: 11rem !important;}
+.filter-query-container{padding-bottom:0.5rem;}
+html{background-image:url('https://bing.immmmm.com/img/bing?region=zh-CN&amp;type=image');width:100%;height:100vh;background-position:center;background-size:cover;background-attachment:fixed;}
+.w-full.bg-zinc-100,.bg-white,.hover\:bg-white:hover,.dark .dark\:bg-zinc-700,.dark .dark\:hover\:bg-zinc-700:hover,.memo-wrapper,.bg-gray-200,.dark .memo-wrapper,.memo-editor-container{--tw-bg-opacity:0.66 !important;}
+.dark header.dark\:bg-zinc-800,aside.dark\:bg-zinc-800,.bg-gray-100,.dark html,.dark body{--tw-bg-opacity:0 !important;}
+.memo-editor-container&gt;.memo-editor{background-color: transparent !important;}</code></pre>
+
+
+
+<p>然后在“自定义脚本”加入相关脚本：</p>
+
+
+
+<pre class="wp-block-code"><code lang="javascript" class="language-javascript">var link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = 'https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/lxgwwenkaiscreen.min.css';
+link.media = 'print';
+link.onload = function() {
+  this.media = 'all';
+};
+var style = document.createElement('style');
+style.innerHTML = '* { font-family: -apple-system,BlinkMacSystemFont,"LXGW WenKai Screen",PingFang SC,Noto Sans,Noto Sans CJK SC,Microsoft YaHei UI,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif,Segoe UI,Roboto,Helvetica Neue,Arial,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji"; }';
+var head = document.head || document.getElementsByTagName('head')[0];
+head.appendChild(link);
+head.appendChild(style);</code></pre>
+
+
+
+<ul class="wp-block-list">
+<li>为Memos添加Twikoo评论，这会只要在“自定义脚本”加入相关脚本：</li>
+</ul>
+
+
+
+<pre class="wp-block-code"><code class="">// Memos插入 Twikoo 评论
+var twikooENV = 'https://twikoo.057000.xyz/'  // Twikoo 评论地址
+function addTwikooJS() {
+  var memosTwikoo = document.createElement("script");
+  memosTwikoo.src = `https://cdn.staticfile.org/twikoo/1.6.39/twikoo.all.min.js`;
+  var tws = document.getElementsByTagName("script")[0];
+  tws.parentNode.insertBefore(memosTwikoo, tws);
+};
+function startTwikoo() {
+  startTW = setInterval(function(){
+    var nowHref = window.location.href;
+    var twikooDom = document.querySelector('#twikoo') || '';
+    if( nowHref.replace(/^.*\/(m)\/.*$/,'$1') == "m"){
+      if(!twikooDom){
+        addTwikooJS()
+        setTimeout(function() {
+          var memoTw = document.querySelector('.gap-2') || '';
+          memoTw.insertAdjacentHTML('afterend', '&lt;div id="mtcomment"&gt;&lt;/div&gt;');
+          twikoo.init({
+            envId: twikooENV,
+            el: '#mtcomment',
+            path: nowHref.replace(/^.*=?(http.*\/m\/[0-9]+).*$/,'$1'),
+            onCommentLoaded: function () {
+              startTwikoo();
+            }
+          })
+        }, 1500)
+      }else{
+        clearInterval(startTW)
+      }
+    }
+  }, 2000)
+}
+startTwikoo();
+</code></pre>
+
+
+
+<p>至此Memos样式改了，评论也添加好了，水水一篇到手。其实之前也有折腾过Artalk评论，不过最新版本的Artalk版本，不过怎么折腾，就是加载不出来，再后来看到有些博主反映说是最新版有些问题，那好吧，我就不折腾了，直接用Twikoo，反正不就是一个评论嘛，用啥不是用呀。</p>
+
+
+
+<p>最后说明一下，这个添加评论及样式美化，在0.18.1和0.18.0版本上测试没问题，高版本的不一定都好用，还需自个测试哈。</p>
+</div> <!-- 评论 --> <div id="artalk-container" class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700"> <div id="Comments"></div> </div> <!-- Artalk 样式与脚本 --> <link href="https://my-blog.s3.bitiful.net/Artalk/Artalk.css" rel="stylesheet"> <script src="https://my-blog.s3.bitiful.net/Artalk/Artalk.js"></script> <script>
+  function initArtalk() {
+    const container = document.querySelector('#Comments');
+    if (!container) return;
+
+    if (window.artalk) {
+      window.artalk.destroy();
+    }
+
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    // 初始化 Artalk
+    window.artalk = Artalk.init({
+      el: '#Comments',
+      pageKey: window.location.pathname,
+      pageTitle: document.title,
+      server: 'https://talk.057000.xyz',
+      site: '方糖博客',
+      darkMode: isDark,
+      // 增加调试模式，方便在控制台看到更多信息
+      pv: true
+    });
+  }
+
+  // 适配 Astro 生命周期
+  document.addEventListener('astro:page-load', initArtalk);
+  
+  // 确保首次加载也执行
+  if (document.readyState === 'complete') {
+    initArtalk();
+  } else {
+    window.addEventListener('load', initArtalk);
+  }
+
+  // 主题切换监听
+  const observer = new MutationObserver(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (window.artalk) window.artalk.setDarkMode(isDark);
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+</script> </article> </main> <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-gray-500 text-sm"> <p>&copy; 2012-2026 方糖博客 · 基于 Astro + WordPress</p> <p><span class="mobile-hide"> <a href="https://icp.gov.moe/?keyword=20229988" target="_blank">萌ICP备20229988号</a> · 托管于：<a href="https://hostdzire.com/billing/index.php" target="_blank" rel="nofollow"> HostDZire </a> · 使用<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="nofollow"> 又拍云 </a></span></p> </footer> <button id="back-to-top" style="display: none;" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary/80 transition-all z-50 items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg> </button> <script>
+      (function() {
+        const themeToggle = () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          updateIcons();
+        };
+        const updateIcons = () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          const sun = document.getElementById('sun-icon');
+          const moon = document.getElementById('moon-icon');
+          if (sun) sun.classList.toggle('hidden', !isDark);
+          if (moon) moon.classList.toggle('hidden', isDark);
+        };
+        document.getElementById('theme-toggle')?.addEventListener('click', themeToggle);
+        updateIcons();
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.toggle('hidden'));
+        const btt = document.getElementById('back-to-top');
+        if (btt) {
+          window.addEventListener('scroll', () => {
+            if (window.innerWidth >= 768 && window.pageYOffset > 300) btt.style.display = 'flex';
+            else btt.style.display = 'none';
+          });
+          btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      })();
+    </script> </body> </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://fangtang.net/it/270.html"><title>Wordpress使用cloudfs4oss挂载OSS | 方糖博客</title><meta name="description" content="本站一直用的阿里云的ECS，图片也都是存在云磁盘上，依托在七牛免费资源上，感觉速度不是很理想，可能是没有优化好 [&#38;hellip;]
+"><script>
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script><link rel="stylesheet" href="/_astro/_slug_.D6w0NibI.css"><script type="module" src="/_astro/page.V2R8AmkL.js"></script></head> <body class="min-h-screen bg-white dark:bg-dark text-gray-900 dark:text-gray-100 transition-colors flex flex-col"> <header class="sticky top-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800"> <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold hover:text-primary">方糖博客</a> <nav class="hidden md:flex items-center gap-4"> <a href="/" class="hover:text-primary">首页</a> <div class="relative group"> <button class="hover:text-primary flex items-center gap-1">分类 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button> <div class="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"> <a href="/say.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">说说</a> <a href="/it.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">IT 技术</a> <a href="/my.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">生活点滴</a> </div> </div> <a href="/tags.html" class="hover:text-primary">标签</a> <a href="/archive.html" class="hover:text-primary">归档</a><a href="/guestbook.html" class="hover:text-primary">留言</a><a href="/about.html" class="hover:text-primary">关于</a> <a href="/rss.xml" class="p-2 hover:text-primary" title="RSS"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg> </a> <a href="/search.html" class="p-2 hover:text-primary" title="搜索"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> </a> <button id="theme-toggle" class="p-2 hover:text-primary" title="切换主题"> <svg id="sun-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><path d="M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg> <svg id="moon-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </nav> <div class="flex md:hidden items-center gap-2"> <a href="/search.html" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a> <button id="mobile-menu-btn" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button> </div> </div> <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800 p-4 space-y-2 text-center"> <a href="/" class="block py-2">首页</a> <a href="/say.html" class="block py-2">说说</a> <a href="/it.html" class="block py-2">IT 技术</a> <a href="/my.html" class="block py-2">生活点滴</a> <a href="/tags.html" class="block py-2">标签</a> <a href="/archive.html" class="block py-2">归档</a><a href="/guestbook.html" class="block py-2">留言</a><a href="/about.html" class="block py-2">关于</a> </div> </header> <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full"> <article> <!-- 文章头部 --> <header class="mb-8"> <h1 class="text-3xl font-bold mb-4">Wordpress使用cloudfs4oss挂载OSS</h1> <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400"> <time datetime="2015-12-23T06:36:00"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 2015年12月23日 </time> <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs"> IT网络 </span> </div> </header> <!-- 文章内容 --> <div class="prose dark:prose-invert max-w-none"><p>本站一直用的阿里云的ECS，图片也都是存在云磁盘上，依托在七牛免费资源上，感觉速度不是很理想，可能是没有优化好的缘故吧，最近对阿里云的OSS感兴趣了（一直都想用，只不过在价格和使用上有点……），前几天用了OSS插件，用着也挺好，可能是因为我是个非插件控吧，总想找个办法可以不用插件，所以就找到了cloudfs4oss，这是款可以将OSS直接挂载到ECS上，就像一个目录一样方便访问，那就动手吧：</p>
+<p>1、安装配置环境：</p>
+<pre><code>yum install libcurl libcurl-devel openssl-devel fuse fuse-libs fuse-devel libxml2-develoss-cn-qingdao-internal.aliyuncs.com</code></pre>
+<p>2、下载cloudfs4oss文件并解压（这个可以在阿里云的云市场里购买（免费的）后也会有链接下载的），解压后再进太cloudfs4oss目录：</p>
+<pre><code>wget <a href="http://blog.cloudtalkers.com/wp-content/uploads/CloudFS_Centos64_0273.tar.gz">http://blog.cloudtalkers.com/wp-content/uploads/CloudFS_Centos64_0273.tar.gz</a>
+tar -zxf CloudFS_Centos64_0273.tar.gz
+yum install libunwind-devel
+cd CloudFS_Centos64</code></pre>
+<p>3、安装cloudfs4oss，这里有默认安装和自定义安装</p>
+<ul>
+<li>默认安装是指cloudfs的安装目录是<code> /usr/local/cloudfs </code>，oss的挂载目录是<code>  /mnt/oss </code>，操作如下：<br /><code> ./CloudFS_Install.sh </code></li>
+<li>自定义安装（个人建议这个，方便），可以直接挂载到<code> /home/wwwroot/ </code>网站目录<code> /wp-content/uploads </code>，操作如下：</li>
+</ul>
+<pre><code>./CloudFS_Install.sh INSTALL_DIR=/usr/local/cloudfs MOUNT_POINT=/home/wwwroot/网站目录/wp-content/uploads</code></pre>
+<h3>这里需要注意的是：网站目录/wp-content/uploads中的uploads目录必须为空，否则会出错！</h3>
+<p>4、挂载后再配置cloudfs.conf文件，一般在<code> /usr/local/cloudfs/conf </code>下，具体需要配置如下：<br /><img decoding="async" src="https://cdn.uu126.cn/wp-content/uploads/2015/12/cloud4fss.png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>根据自己的OSS情况进行配置即可。<br />5、运行cloudfs4oss，输入：<code> service cloudfs start </code><br />然后可以在Wordpress的多媒体里添加文件，再在OSS里看一下有没有刚添加的文件，如果有的话说明就成功了。</p>
+<p>为了这玩意，折腾了蛮长时间，总算是功德圆满了。</p>
+</div> <!-- 评论 --> <div id="artalk-container" class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700"> <div id="Comments"></div> </div> <!-- Artalk 样式与脚本 --> <link href="https://my-blog.s3.bitiful.net/Artalk/Artalk.css" rel="stylesheet"> <script src="https://my-blog.s3.bitiful.net/Artalk/Artalk.js"></script> <script>
+  function initArtalk() {
+    const container = document.querySelector('#Comments');
+    if (!container) return;
+
+    if (window.artalk) {
+      window.artalk.destroy();
+    }
+
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    // 初始化 Artalk
+    window.artalk = Artalk.init({
+      el: '#Comments',
+      pageKey: window.location.pathname,
+      pageTitle: document.title,
+      server: 'https://talk.057000.xyz',
+      site: '方糖博客',
+      darkMode: isDark,
+      // 增加调试模式，方便在控制台看到更多信息
+      pv: true
+    });
+  }
+
+  // 适配 Astro 生命周期
+  document.addEventListener('astro:page-load', initArtalk);
+  
+  // 确保首次加载也执行
+  if (document.readyState === 'complete') {
+    initArtalk();
+  } else {
+    window.addEventListener('load', initArtalk);
+  }
+
+  // 主题切换监听
+  const observer = new MutationObserver(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (window.artalk) window.artalk.setDarkMode(isDark);
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+</script> </article> </main> <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-gray-500 text-sm"> <p>&copy; 2012-2026 方糖博客 · 基于 Astro + WordPress</p> <p><span class="mobile-hide"> <a href="https://icp.gov.moe/?keyword=20229988" target="_blank">萌ICP备20229988号</a> · 托管于：<a href="https://hostdzire.com/billing/index.php" target="_blank" rel="nofollow"> HostDZire </a> · 使用<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="nofollow"> 又拍云 </a></span></p> </footer> <button id="back-to-top" style="display: none;" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary/80 transition-all z-50 items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg> </button> <script>
+      (function() {
+        const themeToggle = () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          updateIcons();
+        };
+        const updateIcons = () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          const sun = document.getElementById('sun-icon');
+          const moon = document.getElementById('moon-icon');
+          if (sun) sun.classList.toggle('hidden', !isDark);
+          if (moon) moon.classList.toggle('hidden', isDark);
+        };
+        document.getElementById('theme-toggle')?.addEventListener('click', themeToggle);
+        updateIcons();
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.toggle('hidden'));
+        const btt = document.getElementById('back-to-top');
+        if (btt) {
+          window.addEventListener('scroll', () => {
+            if (window.innerWidth >= 768 && window.pageYOffset > 300) btt.style.display = 'flex';
+            else btt.style.display = 'none';
+          });
+          btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      })();
+    </script> </body> </html>

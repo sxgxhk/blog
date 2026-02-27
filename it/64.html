@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://fangtang.net/it/64.html"><title>Win2003 VPS IIS+PHP+MYSQL+N点主机面板 搭建Typecho网站图文教程！（转载自味道网） | 方糖博客</title><meta name="description" content="Win2003 VPS IIS+PHP+MYSQL+N点主机面板 搭建Typecho网站图文教程(新手必看)！ [&#38;hellip;]
+"><script>
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script><link rel="stylesheet" href="/_astro/_slug_.D6w0NibI.css"><script type="module" src="/_astro/page.V2R8AmkL.js"></script></head> <body class="min-h-screen bg-white dark:bg-dark text-gray-900 dark:text-gray-100 transition-colors flex flex-col"> <header class="sticky top-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800"> <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold hover:text-primary">方糖博客</a> <nav class="hidden md:flex items-center gap-4"> <a href="/" class="hover:text-primary">首页</a> <div class="relative group"> <button class="hover:text-primary flex items-center gap-1">分类 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button> <div class="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"> <a href="/say.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">说说</a> <a href="/it.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">IT 技术</a> <a href="/my.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">生活点滴</a> </div> </div> <a href="/tags.html" class="hover:text-primary">标签</a> <a href="/archive.html" class="hover:text-primary">归档</a><a href="/guestbook.html" class="hover:text-primary">留言</a><a href="/about.html" class="hover:text-primary">关于</a> <a href="/rss.xml" class="p-2 hover:text-primary" title="RSS"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg> </a> <a href="/search.html" class="p-2 hover:text-primary" title="搜索"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> </a> <button id="theme-toggle" class="p-2 hover:text-primary" title="切换主题"> <svg id="sun-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><path d="M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg> <svg id="moon-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </nav> <div class="flex md:hidden items-center gap-2"> <a href="/search.html" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a> <button id="mobile-menu-btn" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button> </div> </div> <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800 p-4 space-y-2 text-center"> <a href="/" class="block py-2">首页</a> <a href="/say.html" class="block py-2">说说</a> <a href="/it.html" class="block py-2">IT 技术</a> <a href="/my.html" class="block py-2">生活点滴</a> <a href="/tags.html" class="block py-2">标签</a> <a href="/archive.html" class="block py-2">归档</a><a href="/guestbook.html" class="block py-2">留言</a><a href="/about.html" class="block py-2">关于</a> </div> </header> <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full"> <article> <!-- 文章头部 --> <header class="mb-8"> <h1 class="text-3xl font-bold mb-4">Win2003 VPS IIS+PHP+MYSQL+N点主机面板 搭建Typecho网站图文教程！（转载自味道网）</h1> <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400"> <time datetime="2013-05-29T03:26:26"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 2013年5月29日 </time> <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs"> IT网络 </span> </div> </header> <!-- 文章内容 --> <div class="prose dark:prose-invert max-w-none"><p>Win2003 VPS IIS+PHP+MYSQL+N点主机面板 搭建Typecho网站图文教程(新手必看)！<br />
+有不少朋友买了WIN VPS后不知道怎么弄网站，今天我就来详细图文解说下 Win2003 VPS 利用 IIS+PHP+MYSQL+N点主机面板来搭建Typecho网站图文教程：</p>
+<p><!--more--><strong>一、准备工作：</strong><br />
+1，从VPS服务商那里获得 IP(购买后服务商分配给你) 、administrator密码(VPS管理面板里提供) ,确保你的VPS系统为 Windows 2003 ，其他系统请绕行。如果不是请进入VPS管理面板重新做系统。<br />
+2，利用远程桌面连接到你的WIN主机中，进入后，VPS主机商一般都会把IIS安装好的，并且会在桌面直接显示 tool 文件夹，里面有需要的软件，如果没有请自行下载，或者和你的VPS主机商索要。<br />
+需要准备的软件：</p>
+<blockquote><p>3389x.rar # 用于修改远程端口<br />
+zkeysphp.rar #用于直接在IIS下安装PHP+MYSQL+PHPMYADMIN（前提：IIS先装好。）<br />
+ServU6.4.rar #FTP软件<br />
+ISAPI_Rewrite_Full.rar #IIS环境下支持的httpd.ini伪静态插件<br />
+SQL2000+sp4.rar #支持asp.net的mssql数据库和SP4补丁<br />
+N196.msi #N点主机管理面板软件</p></blockquote>
+<blockquote><p>以上软件打包下载：<a href="http://weidao.net/iis.html" target="_blank" rel="noopener">http://weidao.net/iis.html</a></p></blockquote>
+<p>3，远程进入桌面后，首先要修改VPS密码，点击 “我的电脑” 右键 “管理” - “系统工具” - “本地用户和组” - “用户” 第一个就是 administrator ，你可以点击右键进行修改密码。<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11013.jpg" /><br />
+4，刚拿到的VPS只有系统C分区，这个时候要扩展你额外的磁盘分区：继续 点击 “储存” - “磁盘管理” - 右键 未指派的 空间（图中是19.99G）- “新建磁盘分区” 。<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11014.jpg" /><br />
+直接下一步，直到下图所示，选择 “执行快速格式话” 打勾，下一步，完成即可。<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11015.jpg" /><br />
+OK，完成后，如图所示：<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11016.jpg" /><br />
+在我的电脑里面也出现了D盘分区：<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11017.jpg" /><br />
+<strong>二、安装环境：（绝大多数VPS服务商都会安装好IIS的，如果没有自行解决。）</strong><br />
+1，打开桌面 tool 文件夹，所有文件解压如图所示：<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11018.jpg" /><br />
+2，打开 3389x.rar ，自行修改远程端口，记得开启远程桌面打勾，主机重启后记得加上你修改的端口即可。<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11019.jpg" /><br />
+3，打开 zkeysphp.rar ，安装 IIS 下 PHP+MYSQL+PHPMYADMIN 一键安装包，直接下一步知道完成。<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11020.jpg" /><br />
+安装完成后，立刻在自己的电脑中输入网址 http://IP:999/index.php 进入 PHPMYADMIN 修改 MYSQL root 密码 （默认密码为：zkeys），你可以进入IIS管理中心，看到下图所示：<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11021.jpg" /><br />
+4，打开 ServU6.4.rar 安装 FTP 软件，先安装 英文原版，然后安装 汉化包 。记得要先开个FTP账户，不然N点主机管理面板用不起来。<br />
+4-1，确保FTP软件安装在非系统分区里，我这里是D盘：（N点主机配置需要用的）<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11022.jpg" /><br />
+4-2，汉化包安装后，根据提示一步一步进行安装，全部安装完成后，运行 keygen.exe 注册机，注册过后就是无限用户了。<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11023.jpg" /><br />
+5，安装 ISAPI_Rewrite_Full.rar 全功能版伪静态组件，安装后需要注册，序列号压缩包中含有。<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11024.jpg" /><br />
+6，安装 SQL2000+sp4.rar ，详细安装步骤：<a href="http://www.weidao.net/1495.html" target="_blank" rel="noopener">http://www.weidao.net/1495.html</a><br />
+7，重启WIN VPS后，确认右下角FTP、MSSQL 任务栏小图标已经开启，没有红叉叉。<br />
+到这里为止，IIS+PHP+MYSQL+PHPMYADMIN+FTP+IIS全功能伪静态(httpd.ini) 已经安装完成。下面就来安装 N点主机管理面板，将上面的所有东东全部绑定到面板里面，这样可以方便我们操作。<br />
+<strong>三、安装面板：</strong><br />
+1，运行 N点主机管理面板软件 ，记得把软件安装到非系统盘（一般都是D盘），直接点击安装完成即可。<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11025.jpg" /><br />
+2，双击桌面 “N点主机配置工具”，如图所示，输入加密字符，点击 “设置” ，完成后会提示你后台地址和密码。<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11026.jpg" /><br />
+3，打开你电脑的浏览器，输入地址登陆配置，如果无法访问，进入VPS打开IIS管理中心 - “Web 服务扩展” - 右侧 “Active Server Pages” - “允许”如图所示：<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11027.jpg" /><br />
+4，登陆N点主机管理后台，左侧 “总管理员设置”迅速修改密码。<br />
+5，面板左侧，“空间存放路径设置” 如图：<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11028.jpg" /><br />
+6，面板左侧，“主机系统参数设置”，这个是关键：</p>
+<blockquote><p>6.1，服务器IP地址：填写你的VPS IP地址；<br />
+6.2，FTP服务软件：Serv-U 6.4<br />
+6.3，默认文档：添加个 default.asp<br />
+6.4，Serv-U/G6 安装路径：D:Serv-U（就是刚才你安装时候的路径）<br />
+6.5，MSSQL 管理员密码：就是你自己设置的sa密码<br />
+6.6，MYSQL 数据存放路径：D:ZkeysSoftMySqlMySQL Server 5.1data （zkeys你安装的是D盘吗）<br />
+6.7，MYSQL 管理员密码：就是你自己设置的root数据库密码</p></blockquote>
+<p>点击 “修改配置”，OK，搞定。<br />
+<strong>四，开设网站：</strong><br />
+1，进入N点管理面板左侧，点击 “站点虚拟主机开设”如图：<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11029.jpg" /><br />
+浏览你开通的域名，恭喜你的虚拟主机已经开通了。<br />
+2，接着开通MSSQL和MYSQL，这个比较简单。<br />
+3，直接输入IP，你会看到主机登陆页面，在这里你可以自由的管理你刚才开通的主机空间和数据库了。<br />
+4，下载TYPECHO博客程序(官方地址：<a href="http://typecho.org/" target="_blank" rel="noopener">typecho.org</a>)，解压后打包成 typecho.rar 上传到你的FTP空间 web 文件夹中。<br />
+5，进入主机面板，点击“在线解压文件”如图所示：<br />
+<img decoding="async" alt="" src="http://www.weidao.net/images/2012/11030.jpg" /><br />
+6，输入你绑定的域名，现在开始安装TYPECHO吧！</p>
+</div> <!-- 评论 --> <div id="artalk-container" class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700"> <div id="Comments"></div> </div> <!-- Artalk 样式与脚本 --> <link href="https://my-blog.s3.bitiful.net/Artalk/Artalk.css" rel="stylesheet"> <script src="https://my-blog.s3.bitiful.net/Artalk/Artalk.js"></script> <script>
+  function initArtalk() {
+    const container = document.querySelector('#Comments');
+    if (!container) return;
+
+    if (window.artalk) {
+      window.artalk.destroy();
+    }
+
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    // 初始化 Artalk
+    window.artalk = Artalk.init({
+      el: '#Comments',
+      pageKey: window.location.pathname,
+      pageTitle: document.title,
+      server: 'https://talk.057000.xyz',
+      site: '方糖博客',
+      darkMode: isDark,
+      // 增加调试模式，方便在控制台看到更多信息
+      pv: true
+    });
+  }
+
+  // 适配 Astro 生命周期
+  document.addEventListener('astro:page-load', initArtalk);
+  
+  // 确保首次加载也执行
+  if (document.readyState === 'complete') {
+    initArtalk();
+  } else {
+    window.addEventListener('load', initArtalk);
+  }
+
+  // 主题切换监听
+  const observer = new MutationObserver(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (window.artalk) window.artalk.setDarkMode(isDark);
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+</script> </article> </main> <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-gray-500 text-sm"> <p>&copy; 2012-2026 方糖博客 · 基于 Astro + WordPress</p> <p><span class="mobile-hide"> <a href="https://icp.gov.moe/?keyword=20229988" target="_blank">萌ICP备20229988号</a> · 托管于：<a href="https://hostdzire.com/billing/index.php" target="_blank" rel="nofollow"> HostDZire </a> · 使用<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="nofollow"> 又拍云 </a></span></p> </footer> <button id="back-to-top" style="display: none;" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary/80 transition-all z-50 items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg> </button> <script>
+      (function() {
+        const themeToggle = () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          updateIcons();
+        };
+        const updateIcons = () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          const sun = document.getElementById('sun-icon');
+          const moon = document.getElementById('moon-icon');
+          if (sun) sun.classList.toggle('hidden', !isDark);
+          if (moon) moon.classList.toggle('hidden', isDark);
+        };
+        document.getElementById('theme-toggle')?.addEventListener('click', themeToggle);
+        updateIcons();
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.toggle('hidden'));
+        const btt = document.getElementById('back-to-top');
+        if (btt) {
+          window.addEventListener('scroll', () => {
+            if (window.innerWidth >= 768 && window.pageYOffset > 300) btt.style.display = 'flex';
+            else btt.style.display = 'none';
+          });
+          btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      })();
+    </script> </body> </html>

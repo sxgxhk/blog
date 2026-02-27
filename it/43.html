@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://fangtang.net/it/43.html"><title>教你用Serv－U架设个人FTP | 方糖博客</title><meta name="description" content="首先下载安装Serv-U，运行，将出现“设置向导”窗口，我们就来跟随着这个向导的指引，一步步进行操作 1. 设 [&#38;hellip;]
+"><script>
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script><link rel="stylesheet" href="/_astro/_slug_.D6w0NibI.css"><script type="module" src="/_astro/page.V2R8AmkL.js"></script></head> <body class="min-h-screen bg-white dark:bg-dark text-gray-900 dark:text-gray-100 transition-colors flex flex-col"> <header class="sticky top-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800"> <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold hover:text-primary">方糖博客</a> <nav class="hidden md:flex items-center gap-4"> <a href="/" class="hover:text-primary">首页</a> <div class="relative group"> <button class="hover:text-primary flex items-center gap-1">分类 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button> <div class="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"> <a href="/say.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">说说</a> <a href="/it.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">IT 技术</a> <a href="/my.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">生活点滴</a> </div> </div> <a href="/tags.html" class="hover:text-primary">标签</a> <a href="/archive.html" class="hover:text-primary">归档</a><a href="/guestbook.html" class="hover:text-primary">留言</a><a href="/about.html" class="hover:text-primary">关于</a> <a href="/rss.xml" class="p-2 hover:text-primary" title="RSS"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg> </a> <a href="/search.html" class="p-2 hover:text-primary" title="搜索"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> </a> <button id="theme-toggle" class="p-2 hover:text-primary" title="切换主题"> <svg id="sun-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><path d="M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg> <svg id="moon-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </nav> <div class="flex md:hidden items-center gap-2"> <a href="/search.html" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a> <button id="mobile-menu-btn" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button> </div> </div> <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800 p-4 space-y-2 text-center"> <a href="/" class="block py-2">首页</a> <a href="/say.html" class="block py-2">说说</a> <a href="/it.html" class="block py-2">IT 技术</a> <a href="/my.html" class="block py-2">生活点滴</a> <a href="/tags.html" class="block py-2">标签</a> <a href="/archive.html" class="block py-2">归档</a><a href="/guestbook.html" class="block py-2">留言</a><a href="/about.html" class="block py-2">关于</a> </div> </header> <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full"> <article> <!-- 文章头部 --> <header class="mb-8"> <h1 class="text-3xl font-bold mb-4">教你用Serv－U架设个人FTP</h1> <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400"> <time datetime="2012-12-08T14:29:37"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 2012年12月8日 </time> <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs"> IT网络 </span> </div> </header> <!-- 文章内容 --> <div class="prose dark:prose-invert max-w-none"><p align="left">首先下载安装Serv-U，运行，将出现“设置向导”窗口，我们就来跟随着这个向导的指引，一步步进行操作</p>
+<p align="left"><strong>1. 设置Serv－U的IP地址与域名</strong><br />
+右键点击“域”，来到“新建域”窗口（如图1），这里要求输入本机的IP地址。</p>
+<p>　</p>
+<p><img loading="lazy" decoding="async" src="http://www.zgsj.com/vps/ftpphoto/1.JPG" alt="" width="613" height="259" /></p>
+<p align="center">
+图(1) 新建域</p>
+<p align="justify">输入你的IP地址。</p>
+<p align="justify">下一步，进行“域名”设定。这个域名只是用来标识该FTP域，没有特殊的含义，比如笔者输入“ftp.zgsj.com”。</p>
+<p align="justify">下一步，域端口号设定。使用默认的21端口。单击下一步。</p>
+<p align="justify">下一步，设置域类型。选择存储与计算机注册表</p>
+<p><img loading="lazy" decoding="async" src="http://www.zgsj.com/vps/ftpphoto/2.JPG" alt="" width="584" height="245" /></p>
+<p align="center">图（2）设置域类型</p>
+<p align="center">　</p>
+<p align="left">接下来在本地服务器里勾上“自动开始（系统服务）”的复选框这样当你的电脑一启动，服务器也会跟着开始运行。</p>
+<p><img loading="lazy" decoding="async" src="http://www.zgsj.com/vps/ftpphoto/3.JPG" alt="" width="566" height="238" /></p>
+<p align="center">图（3）设置系统服务</p>
+<p>　</p>
+<p align="left"><strong>2.设置匿名登录</strong></p>
+<p align="left">第一步右击用户，新建用户</p>
+<p><img loading="lazy" decoding="async" src="http://www.zgsj.com/vps/ftpphoto/4.JPG" alt="" width="583" height="300" /></p>
+<p align="center">图（4）新建用户</p>
+<p>　<br />
+下一步，输入您要建立的用户名和密码，如图（5）笔者用的用户名是“11”</p>
+<p><img loading="lazy" decoding="async" src="http://www.zgsj.com/vps/ftpphoto/5.JPG" alt="" width="587" height="246" /></p>
+<p align="center">图（5）建立用户名</p>
+<p align="left">下一步，会要求你指定FTP主目录，并询问是否将用户锁定于主目录中，选“是”，这样登录的用户将只能访问你指定的主目录及以下的各级子目录，而不能访问上级目录，便于保证硬盘上其他文件的安全。</p>
+<p align="center"><img loading="lazy" decoding="async" src="http://www.zgsj.com/vps/ftpphoto/6.JPG" alt="" width="587" height="246" /></p>
+<p align="center">图（6）建立主目录（文件存放路径）</p>
+<p>下一步，配置账户信息。如图（7）根据您的需要选上写入追加删除权限。</p>
+<p align="center"><img loading="lazy" decoding="async" src="http://www.zgsj.com/vps/ftpphoto/7.JPG" alt="" width="623" height="216" /></p>
+<p align="center">图（7）配置账户信息</p>
+<p align="center">　</p>
+<p align="left">账号：如果有用户违反FTP的规定，你可以点击此处的“禁用账号”，让该用户在一段时间内被禁止登录。另外此处的“锁定用户于主目录”一定要勾选，否则你硬盘的绝对地址将暴露。<br />
+常规：根据自身的实际需要，在此设置最大的下载和上传速度、登录到本服务器的最大用户数、同一IP的登录线程数等。<br />
+IP访问：你可以在此拒绝某个讨厌的IP访问你的FTP服务器，只要在“编辑规则”处填上某个IP地址，以后该IP的访问将会全部被拦下。<br />
+配额：勾选“启用磁盘配额”，在此为每位FTP用户设置硬盘空间。点击“计算当前”，可知当前的所有已用空间大小，在“最大”一栏中设定最大的空间值。<br />
+最后，请在有改动内容的标签卡上点击右键，选择“应用”，如此才能使设置生效！<br />
+好了！现在，一个简单的个人FTP服务器就已经完整地呈现在你面前了。不过这时还要测试一下能否成功地下载和上传。</p>
+<p align="left"><strong>3.提高安全性</strong></p>
+<p align="left">为了提高安全性，在本地服务器——》设置——》高级填上PASV端口范围，笔者使用的是50000—50001，另外注意防火墙和安全策略要打开这两个端口。</p>
+<p align="left"><strong>4.上传下载</strong></p>
+<p align="left">要使用FTP服务器下载和上传，就要用到FTP的客户端软件。常用的FTP客户端软件有CuteFTP、FlashFXP、FTP Explorer等等。对于它们的具体使用，这里就不细讲了。基本上只要在这些软件的“主机名”处中填入您的FTP服务器IP地址，而后依次填入用户名，密码和端口（一般为21），点击连接，只要能看到你设定的主目录并成功实现文件的下载和上传，就说明这个用Serv-U建立起来的FTP服务器能正常使用了！</p>
+<p align="left">需要指出的是上传的时候要去掉PASV（被动）方式的连接，具体以flashfxp3.4.1为例</p>
+<p align="left"><strong>“选项——》参数选择-》链接-》代理去掉使用被动模式前的勾”</strong></p>
+</div> <!-- 评论 --> <div id="artalk-container" class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700"> <div id="Comments"></div> </div> <!-- Artalk 样式与脚本 --> <link href="https://my-blog.s3.bitiful.net/Artalk/Artalk.css" rel="stylesheet"> <script src="https://my-blog.s3.bitiful.net/Artalk/Artalk.js"></script> <script>
+  function initArtalk() {
+    const container = document.querySelector('#Comments');
+    if (!container) return;
+
+    if (window.artalk) {
+      window.artalk.destroy();
+    }
+
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    // 初始化 Artalk
+    window.artalk = Artalk.init({
+      el: '#Comments',
+      pageKey: window.location.pathname,
+      pageTitle: document.title,
+      server: 'https://talk.057000.xyz',
+      site: '方糖博客',
+      darkMode: isDark,
+      // 增加调试模式，方便在控制台看到更多信息
+      pv: true
+    });
+  }
+
+  // 适配 Astro 生命周期
+  document.addEventListener('astro:page-load', initArtalk);
+  
+  // 确保首次加载也执行
+  if (document.readyState === 'complete') {
+    initArtalk();
+  } else {
+    window.addEventListener('load', initArtalk);
+  }
+
+  // 主题切换监听
+  const observer = new MutationObserver(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (window.artalk) window.artalk.setDarkMode(isDark);
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+</script> </article> </main> <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-gray-500 text-sm"> <p>&copy; 2012-2026 方糖博客 · 基于 Astro + WordPress</p> <p><span class="mobile-hide"> <a href="https://icp.gov.moe/?keyword=20229988" target="_blank">萌ICP备20229988号</a> · 托管于：<a href="https://hostdzire.com/billing/index.php" target="_blank" rel="nofollow"> HostDZire </a> · 使用<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="nofollow"> 又拍云 </a></span></p> </footer> <button id="back-to-top" style="display: none;" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary/80 transition-all z-50 items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg> </button> <script>
+      (function() {
+        const themeToggle = () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          updateIcons();
+        };
+        const updateIcons = () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          const sun = document.getElementById('sun-icon');
+          const moon = document.getElementById('moon-icon');
+          if (sun) sun.classList.toggle('hidden', !isDark);
+          if (moon) moon.classList.toggle('hidden', isDark);
+        };
+        document.getElementById('theme-toggle')?.addEventListener('click', themeToggle);
+        updateIcons();
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.toggle('hidden'));
+        const btt = document.getElementById('back-to-top');
+        if (btt) {
+          window.addEventListener('scroll', () => {
+            if (window.innerWidth >= 768 && window.pageYOffset > 300) btt.style.display = 'flex';
+            else btt.style.display = 'none';
+          });
+          btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      })();
+    </script> </body> </html>

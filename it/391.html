@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://fangtang.net/it/391.html"><title>Centos7上搭建Lnmp+Ghost 1.x博客 | 方糖博客</title><meta name="description" content="上次写过《Debian 8.X搭建Lnmp+ Ghost 1.x 教程》 ，这不将主机从香港搬回到大杭州后，域 [&#38;hellip;]
+"><script>
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script><link rel="stylesheet" href="/_astro/_slug_.D6w0NibI.css"><script type="module" src="/_astro/page.V2R8AmkL.js"></script></head> <body class="min-h-screen bg-white dark:bg-dark text-gray-900 dark:text-gray-100 transition-colors flex flex-col"> <header class="sticky top-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800"> <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold hover:text-primary">方糖博客</a> <nav class="hidden md:flex items-center gap-4"> <a href="/" class="hover:text-primary">首页</a> <div class="relative group"> <button class="hover:text-primary flex items-center gap-1">分类 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button> <div class="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"> <a href="/say.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">说说</a> <a href="/it.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">IT 技术</a> <a href="/my.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">生活点滴</a> </div> </div> <a href="/tags.html" class="hover:text-primary">标签</a> <a href="/archive.html" class="hover:text-primary">归档</a><a href="/guestbook.html" class="hover:text-primary">留言</a><a href="/about.html" class="hover:text-primary">关于</a> <a href="/rss.xml" class="p-2 hover:text-primary" title="RSS"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg> </a> <a href="/search.html" class="p-2 hover:text-primary" title="搜索"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> </a> <button id="theme-toggle" class="p-2 hover:text-primary" title="切换主题"> <svg id="sun-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><path d="M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg> <svg id="moon-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </nav> <div class="flex md:hidden items-center gap-2"> <a href="/search.html" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a> <button id="mobile-menu-btn" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button> </div> </div> <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800 p-4 space-y-2 text-center"> <a href="/" class="block py-2">首页</a> <a href="/say.html" class="block py-2">说说</a> <a href="/it.html" class="block py-2">IT 技术</a> <a href="/my.html" class="block py-2">生活点滴</a> <a href="/tags.html" class="block py-2">标签</a> <a href="/archive.html" class="block py-2">归档</a><a href="/guestbook.html" class="block py-2">留言</a><a href="/about.html" class="block py-2">关于</a> </div> </header> <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full"> <article> <!-- 文章头部 --> <header class="mb-8"> <h1 class="text-3xl font-bold mb-4">Centos7上搭建Lnmp+Ghost 1.x博客</h1> <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400"> <time datetime="2017-11-03T13:15:00"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 2017年11月3日 </time> <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs"> IT网络 </span> </div> </header> <!-- 文章内容 --> <div class="prose dark:prose-invert max-w-none"><p>上次写过<a href="https://blog.uu126.cn/debian-8-8da-jian-lnmp-ghost-1-x-jiao-cheng/">《Debian 8.X搭建Lnmp+ Ghost 1.x 教程》</a> ，这不将主机从香港搬回到大杭州后，域名又倒腾回之前的uu126.cn（当然加了个前缀blog），加上前不久刚好在<a href="http://blog.imzhengfei.com/centos-7-an-zhuang-pei-zhi-ghost-1-x/">海月博客</a> ，顺手也尝试了一下Centos，结果一切搭建顺利，又可以让我啰嗦一下了。</p>
+<ol>
+<li>Lnmp的搭建就不细说了，可以参照我之前的博文（点击：<a href="https://blog.uu126.cn/debian-8-8da-jian-lnmp-ghost-1-x-jiao-cheng/">传送门</a> ），这里还是推荐使用Oneinstack，相对功能多一点。搭建好以后，使用PHPmyadmin创建所需的博客数据库用户名、数据库（用这个创建较方便），另外也可以直接配置好站点的Nginx文件和SSL，这里就不在啰嗦了，有问题的亲，可以留言。</li>
+<li>
+<p>安装 Node.js</p>
+<ul>
+<li>方法一：</li>
+</ul>
+</li>
+</ol>
+<pre><code>curl -sL https://deb.nodesource.com/setup_6.x | bash -
+apt-get install nodejs</code></pre>
+<ul>
+<li>方法二（推荐使用）：</li>
+</ul>
+<pre><code>国外下载地址：
+wget https://nodejs.org/download/release/v6.9.5/node-v6.9.5.tar.gz
+国内下载地址：
+wget https://npm.taobao.org/mirrors/node/v6.9.5/node-v6.9.5.tar.gz
+tar zxvf node-v6.9.5.tar.gz
+cd node-v6.9.5
+./configure
+make &amp;&amp; make install</code></pre>
+<p>安装好之后可以使用<code> node -v </code>查看，能看到版本号一般就OK了。</p>
+<ol>
+<li>配置 Yarn<br />  可选，使用 yarn 代替 npm，更加快速，安全，稳定。</li>
+</ol>
+<pre><code>wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
+yum -y install yarn</code></pre>
+<p>同样安装之后可以使用<code> yarn -v </code>查看，看到版本号就行。</p>
+<ul>
+<li>查看 npm 全局生成可执行文件软链的路径：</li>
+</ul>
+<pre><code>npm -g bin</code></pre>
+<blockquote>
+<p>/usr/bin</p>
+</blockquote>
+<ul>
+<li>查看 yarn 全局生成可执行文件软链的路径：</li>
+</ul>
+<pre><code>yarn global bin</code></pre>
+<blockquote>
+<p>/usr/local/bin</p>
+</blockquote>
+<p>修改 yarn 全局生成可执行文件软链的路径和 npm 保持一致：</p>
+<pre><code>yarn config set prefix /usr</code></pre>
+<blockquote>
+<p>yarn config v1.2.1<br />success Set "prefix" to "/usr".<br />Done in 0.03s.</p>
+</blockquote>
+<p>再次查看 yarn 全局生成可执行文件软链的路径：</p>
+<pre><code>yarn global bin</code></pre>
+<blockquote>
+<p>/usr/bin</p>
+</blockquote>
+<ol>
+<li>安装 Ghost-CLI<br />使用 yarn 全局安装 ghost-cli：</li>
+</ol>
+<pre><code>yarn global add ghost-cli</code></pre>
+<p>查看安装的 ghost-cli 版本：</p>
+<pre><code>ghost -v</code></pre>
+<blockquote>
+<p>Ghost-CLI version: 1.1.3</p>
+</blockquote>
+<ol>
+<li>安装Ghost1.X<br />创建网站目录：</li>
+</ol>
+<pre><code>mkdir -p /home/wwwroot/blog.uu126.cn</code></pre>
+<p>进入到网站目录：</p>
+<pre><code>cd /home/wwwroot/blog.uu126.cn</code></pre>
+<p>在当前目录免配置安装 ghost：</p>
+<pre><code>ghost install --no-setup</code></pre>
+<blockquote>
+<p>✔ Checking system Node.js version<br />✔ Checking current folder permissions<br />System checks failed with message: 'Linux version is not Ubuntu 16'<br />Some features of Ghost-CLI may not work without additional configuration.<br />For local installs we recommend using ghost install local instead.<br />? Continue anyway?</p>
+</blockquote>
+<p>输入<code> y </code>，回车：</p>
+<blockquote>
+<p>? Continue anyway? Yes<br />✔ Checking operating system<br />✔ Checking MySQL is installed<br />✔ Checking for latest Ghost version<br />✔ Setting up install directory<br />✔ Downloading and installing Ghost v1.16.0<br />✔ Finishing install process</p>
+</blockquote>
+<ol>
+<li>
+<p>配置Ghost1.x</p>
+<ul>
+<li>使用 ghost-ci 配置 ghost：</li>
+</ul>
+</li>
+</ol>
+<pre><code>ghost config</code></pre>
+<blockquote>
+<p>? Enter your blog URL: (<a href="http://localhost">http://localhost</a>:2368)</p>
+</blockquote>
+<p>输入自己网站完整访问路径<code> http://blog.uu126.cn </code>回车：</p>
+<blockquote>
+<p>? Enter your blog URL: <a href="http://blog.imzhengfei.com">http://blog.imzhengfei.com</a><br />? Enter your MySQL hostname: (localhost)</p>
+</blockquote>
+<p>输入 MySQL 主机地址，如果在本机直接回车：</p>
+<blockquote>
+<p>? Enter your MySQL hostname: localhost<br />? Enter your MySQL username:</p>
+</blockquote>
+<p>输入上面创建的 MySQL 用户名，密码，数据库名称：</p>
+<blockquote>
+<p>? Enter your MySQL username: ghost<br />? Enter your MySQL password: [hidden]<br />? Enter your Ghost database name: ghost</p>
+</blockquote>
+<ul>
+<li>初始化数据库</li>
+</ul>
+<p>使用 ghost-ci 初始化数据库：</p>
+<pre><code>ghost setup migrate</code></pre>
+<blockquote>
+<p>✔ Running database migrations</p>
+</blockquote>
+<ul>
+<li>配置系统用户</li>
+</ul>
+<p>使用 ghost-ci 添加 ghost 用户来运行 ghost：</p>
+<pre><code>ghost setup linux-user</code></pre>
+<blockquote>
+<p>Running sudo command: useradd --system --user-group ghost<br />Running sudo command: chown -R ghost:ghost /home/wwwroot/blog.imzhengfei.com/content<br />✔ Setting up "ghost" system user</p>
+</blockquote>
+<ul>
+<li>配置系统服务</li>
+</ul>
+<p>使用 ghost-ci 创建系统服务：</p>
+<pre><code>ghost setup systemd</code></pre>
+<blockquote>
+<p>Running sudo command: ln -sf &gt;/home/wwwroot/blog.uu126.cn/system/files/ghost_undefined.service &gt;/lib/systemd/system/ghost_undefined.service<br />Running sudo command: systemctl daemon-reload<br />✔ Setting up Systemd</p>
+</blockquote>
+<ol>
+<li>
+<p>测试访问博客</p>
+<ul>
+<li>使用 ghost-ci 启动当前网站：</li>
+</ul>
+</li>
+</ol>
+<pre><code>ghost start</code></pre>
+<blockquote>
+<p>✔ Validating config<br />Running sudo command: systemctl start ghost_undefined<br />✔ Starting Ghost<br />Running sudo command: systemctl enable ghost_undefined --quiet<br />✔ Starting Ghost<br />You can access your blog at <a href="http://blog.uu126.cn">http://blog.uu126.cn</a><br />Ghost uses direct mail by default<br />To set up an alternative email method read our docs at <a href="https://docs.ghost.org/docs/mail-config">https://docs.ghost.org/docs/mail-config</a></p>
+</blockquote>
+<ul>
+<li>尝试访问自己的博客。</li>
+</ul>
+<p>注册管理员账户<strong>（ domain 是自己的博客域名）</strong>：</p>
+<pre><code>http:///ghost</code></pre>
+</div> <!-- 评论 --> <div id="artalk-container" class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700"> <div id="Comments"></div> </div> <!-- Artalk 样式与脚本 --> <link href="https://my-blog.s3.bitiful.net/Artalk/Artalk.css" rel="stylesheet"> <script src="https://my-blog.s3.bitiful.net/Artalk/Artalk.js"></script> <script>
+  function initArtalk() {
+    const container = document.querySelector('#Comments');
+    if (!container) return;
+
+    if (window.artalk) {
+      window.artalk.destroy();
+    }
+
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    // 初始化 Artalk
+    window.artalk = Artalk.init({
+      el: '#Comments',
+      pageKey: window.location.pathname,
+      pageTitle: document.title,
+      server: 'https://talk.057000.xyz',
+      site: '方糖博客',
+      darkMode: isDark,
+      // 增加调试模式，方便在控制台看到更多信息
+      pv: true
+    });
+  }
+
+  // 适配 Astro 生命周期
+  document.addEventListener('astro:page-load', initArtalk);
+  
+  // 确保首次加载也执行
+  if (document.readyState === 'complete') {
+    initArtalk();
+  } else {
+    window.addEventListener('load', initArtalk);
+  }
+
+  // 主题切换监听
+  const observer = new MutationObserver(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (window.artalk) window.artalk.setDarkMode(isDark);
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+</script> </article> </main> <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-gray-500 text-sm"> <p>&copy; 2012-2026 方糖博客 · 基于 Astro + WordPress</p> <p><span class="mobile-hide"> <a href="https://icp.gov.moe/?keyword=20229988" target="_blank">萌ICP备20229988号</a> · 托管于：<a href="https://hostdzire.com/billing/index.php" target="_blank" rel="nofollow"> HostDZire </a> · 使用<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="nofollow"> 又拍云 </a></span></p> </footer> <button id="back-to-top" style="display: none;" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary/80 transition-all z-50 items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg> </button> <script>
+      (function() {
+        const themeToggle = () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          updateIcons();
+        };
+        const updateIcons = () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          const sun = document.getElementById('sun-icon');
+          const moon = document.getElementById('moon-icon');
+          if (sun) sun.classList.toggle('hidden', !isDark);
+          if (moon) moon.classList.toggle('hidden', isDark);
+        };
+        document.getElementById('theme-toggle')?.addEventListener('click', themeToggle);
+        updateIcons();
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.toggle('hidden'));
+        const btt = document.getElementById('back-to-top');
+        if (btt) {
+          window.addEventListener('scroll', () => {
+            if (window.innerWidth >= 768 && window.pageYOffset > 300) btt.style.display = 'flex';
+            else btt.style.display = 'none';
+          });
+          btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      })();
+    </script> </body> </html>

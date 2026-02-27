@@ -1,0 +1,248 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://fangtang.net/it/1327.html"><title>Wordpress外链跳转到中间页 | 方糖博客</title><meta name="description" content="记得之前还在Wordpress的时候，曾经捣鼓了一个跳转页(原文章链接)，后来换成Typecho后，用的是姜先 [&#38;hellip;]
+"><script>
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script><link rel="stylesheet" href="/_astro/_slug_.D6w0NibI.css"><script type="module" src="/_astro/page.V2R8AmkL.js"></script></head> <body class="min-h-screen bg-white dark:bg-dark text-gray-900 dark:text-gray-100 transition-colors flex flex-col"> <header class="sticky top-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800"> <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold hover:text-primary">方糖博客</a> <nav class="hidden md:flex items-center gap-4"> <a href="/" class="hover:text-primary">首页</a> <div class="relative group"> <button class="hover:text-primary flex items-center gap-1">分类 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button> <div class="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"> <a href="/say.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">说说</a> <a href="/it.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">IT 技术</a> <a href="/my.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">生活点滴</a> </div> </div> <a href="/tags.html" class="hover:text-primary">标签</a> <a href="/archive.html" class="hover:text-primary">归档</a><a href="/guestbook.html" class="hover:text-primary">留言</a><a href="/about.html" class="hover:text-primary">关于</a> <a href="/rss.xml" class="p-2 hover:text-primary" title="RSS"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg> </a> <a href="/search.html" class="p-2 hover:text-primary" title="搜索"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> </a> <button id="theme-toggle" class="p-2 hover:text-primary" title="切换主题"> <svg id="sun-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><path d="M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg> <svg id="moon-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </nav> <div class="flex md:hidden items-center gap-2"> <a href="/search.html" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a> <button id="mobile-menu-btn" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button> </div> </div> <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800 p-4 space-y-2 text-center"> <a href="/" class="block py-2">首页</a> <a href="/say.html" class="block py-2">说说</a> <a href="/it.html" class="block py-2">IT 技术</a> <a href="/my.html" class="block py-2">生活点滴</a> <a href="/tags.html" class="block py-2">标签</a> <a href="/archive.html" class="block py-2">归档</a><a href="/guestbook.html" class="block py-2">留言</a><a href="/about.html" class="block py-2">关于</a> </div> </header> <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full"> <article> <!-- 文章头部 --> <header class="mb-8"> <h1 class="text-3xl font-bold mb-4">Wordpress外链跳转到中间页</h1> <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400"> <time datetime="2024-12-18T15:56:23"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 2024年12月18日 </time> <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs"> IT网络 </span> </div> </header> <!-- 文章内容 --> <div class="prose dark:prose-invert max-w-none">
+<p>记得之前还在Wordpress的时候，曾经捣鼓了一个跳转页(<a href="https://zfei.net/post/1177.html" title="原文章链接">原文章链接</a>)，后来换成Typecho后，用的是姜先森的主题，也就直接用着他的跳转方式。回到Wordpress(后简称WP)后，就一直没弄，刚好中午闲逛，又让我看到了其它博主的跳转页，感觉不错，那就赶紧“作业抄起来”。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://fangtang.net/wp-content/uploads/2024/12/20241218133045840.jpg" alt=""/></figure>
+
+
+
+<p></p>
+
+
+
+<p>这个跳转页参照了<a href="https://koobai.com/zhongjiantiaozhuan/" title="空白大佬">空白大佬</a>的，太多技术性的咱就不说了，都是抄作业，下面就细说一下步骤：</p>
+
+
+
+<ul class="wp-block-list">
+<li>在网站根目录下新建一个文件夹，例如<code> mygo </code>，再在里面新建几个文件如：<code> go.js </code>、 <code>go.html </code>、<code> go.css </code>，跳转页的图片自己抠一下吧。</li>
+
+
+
+<li>go.js文件内容：</li>
+</ul>
+
+
+
+<pre class="wp-block-code"><code lang="javascript" class="language-javascript">function checkParent(element, classNames) {
+    while (element) {
+        if (element.classList &amp;&amp; classNames.some(cn =&gt; element.classList.contains(cn))) {
+            return true;
+        }
+        element = element.parentElement;
+    }
+    return false;
+}
+var excludedClasses = ['card-link', 'friend-item', 'contact-item', 'footer-item']; // 排除的 a 标签类名
+window.addEventListener('load', () =&gt; {
+    document.body.addEventListener('click', function (e) {
+        let target = e.target;
+
+        // 确保点击的目标是 &lt;a&gt; 标签
+        while (target &amp;&amp; target.nodeName !== 'A') {
+            target = target.parentNode;
+        }
+
+        // 如果是 &lt;a&gt; 标签并且满足以下条件才触发跳转逻辑
+        if (target &amp;&amp; target.nodeName === 'A' &amp;&amp;
+            target.href &amp;&amp; // 确保有 href 属性
+            target.href !== '#' &amp;&amp; // 排除返回顶部链接
+            !checkParent(target, excludedClasses) &amp;&amp; // 排除特定类名
+            !target.href.startsWith('javascript:') &amp;&amp; // 排除 javascript: 链接
+            !target.href.includes('zfei.net') &amp;&amp; // 排除特定域名
+            !target.href.includes('057000.xyz') &amp;&amp;
+            target.hostname !== window.location.hostname) { // 仅针对外部链接
+            e.preventDefault();
+
+            // Base64 编码目标链接
+            let encodedUrl = btoa(target.href);
+            let url = '/mygo/go.html?target=' + encodedUrl;
+
+            // 在新窗口中打开跳转页面
+            window.open(url, '_blank');
+        }
+    });
+});
+</code></pre>
+
+
+
+<ul class="wp-block-list">
+<li>go.html文件内容：</li>
+</ul>
+
+
+
+<pre class="wp-block-code"><code lang="markup" class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;link rel="stylesheet" href="go.css"&gt;
+    &lt;title&gt;即将离开知非博客&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="tiaozhuan-all"&gt;
+    &lt;div class="tiaozhuan-nrong"&gt;
+        &lt;div class="tiaozhuan-title"&gt;您即将离开 『 知非博客 』 ，跳转到以下外部链接&lt;/div&gt;
+        &lt;div id="tiaozhuan-link"&gt;&lt;/div&gt;
+        &lt;div class="tiaozhuan-info"&gt;请自行识别该链接是否安全，并保管好个人信息。&lt;/div&gt;
+        &lt;div class="tiaozhuan-button"&gt;&lt;a href='' id='direct-link'&gt;继续访问&lt;/a&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    const params = new URLSearchParams(window.location.search);
+    const encodedTarget = params.get('target');
+    const target = atob(encodedTarget); // 使用 atob 进行 Base64 解码
+    if (target) {
+        document.getElementById('direct-link').href = target;
+        document.getElementById('tiaozhuan-link').textContent = '' + target; // 直接显示目标地址    
+    } else {
+        console.error('未指定重定向目标。');
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+
+
+<ul class="wp-block-list">
+<li>go.css文件内容：</li>
+</ul>
+
+
+
+<pre class="wp-block-code"><code lang="css" class="language-css">body {
+    background: #ececec;
+}
+.tiaozhuan-all {
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -10px;
+    border-radius: 10px;
+    background-image: url('go.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #666;
+    word-break: break-all;
+    max-width: 700px;
+    height: 350px;
+    text-align: center;
+    font-size: 0.85rem;
+    overflow: hidden;
+    margin: 100px auto 0;
+    @include breakpoint('small') {
+        aspect-ratio: 2 / 1;
+        height: auto;
+    }
+}
+.tiaozhuan-nrong {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 20px 30px 20px;
+}
+.tiaozhuan-title {
+    font-size: 1.3rem;
+    color: #222;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+.tiaozhuan-info {
+    margin-top: 6px;
+}
+.tiaozhuan-button {
+    margin-top: 20px;
+}
+.tiaozhuan-button a {
+    color: #fc9151;
+    border-radius: 4px;
+    padding: 10px 30px;
+    font-size: .85rem;
+    border: 0.5px solid #fc9151;
+    display: inline-block;
+    text-decoration: none;
+}</code></pre>
+
+
+
+<ul class="wp-block-list">
+<li>最后在主题的<code> footer.php </code>中添加一段代码：<br><pre><code class="language-php">&lt;script src="/mygo/go.js"&gt;&lt;/script&gt;</code></pre><br><p>其实，对于我们浏览体验来说，这样子操作等于多了一步跳转，体验上总归是不好，但为了愉快的玩耍博客，稳妥一点还是需要的。如果觉得跳转中间页很烦人，浏览器可以装个 Skip Redirect 插件，告别所有网站的中间页跳转，直接抵达目标地址。<br><br>哈哈，跳转功能只运行了几个小时让我撤掉了，正如Jeffer.Z大佬说的：</p><br><blockquote><p>有备案加是对的，如果不需要备案就无所谓了，我反正是不加，影响大家跳转流畅度感觉</p></blockquote><br></li>
+</ul>
+
+
+
+<p>所以说作为一个没有备案的网站，这种影响大家畅游网络的事宜，确实就不需要了，如果是备案网站的话，建议还是加一个跳转，虽然不太友好，但碍于现实也没什么好办法。</p>
+</div> <!-- 评论 --> <div id="artalk-container" class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700"> <div id="Comments"></div> </div> <!-- Artalk 样式与脚本 --> <link href="https://my-blog.s3.bitiful.net/Artalk/Artalk.css" rel="stylesheet"> <script src="https://my-blog.s3.bitiful.net/Artalk/Artalk.js"></script> <script>
+  function initArtalk() {
+    const container = document.querySelector('#Comments');
+    if (!container) return;
+
+    if (window.artalk) {
+      window.artalk.destroy();
+    }
+
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    // 初始化 Artalk
+    window.artalk = Artalk.init({
+      el: '#Comments',
+      pageKey: window.location.pathname,
+      pageTitle: document.title,
+      server: 'https://talk.057000.xyz',
+      site: '方糖博客',
+      darkMode: isDark,
+      // 增加调试模式，方便在控制台看到更多信息
+      pv: true
+    });
+  }
+
+  // 适配 Astro 生命周期
+  document.addEventListener('astro:page-load', initArtalk);
+  
+  // 确保首次加载也执行
+  if (document.readyState === 'complete') {
+    initArtalk();
+  } else {
+    window.addEventListener('load', initArtalk);
+  }
+
+  // 主题切换监听
+  const observer = new MutationObserver(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (window.artalk) window.artalk.setDarkMode(isDark);
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+</script> </article> </main> <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-gray-500 text-sm"> <p>&copy; 2012-2026 方糖博客 · 基于 Astro + WordPress</p> <p><span class="mobile-hide"> <a href="https://icp.gov.moe/?keyword=20229988" target="_blank">萌ICP备20229988号</a> · 托管于：<a href="https://hostdzire.com/billing/index.php" target="_blank" rel="nofollow"> HostDZire </a> · 使用<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="nofollow"> 又拍云 </a></span></p> </footer> <button id="back-to-top" style="display: none;" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary/80 transition-all z-50 items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg> </button> <script>
+      (function() {
+        const themeToggle = () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          updateIcons();
+        };
+        const updateIcons = () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          const sun = document.getElementById('sun-icon');
+          const moon = document.getElementById('moon-icon');
+          if (sun) sun.classList.toggle('hidden', !isDark);
+          if (moon) moon.classList.toggle('hidden', isDark);
+        };
+        document.getElementById('theme-toggle')?.addEventListener('click', themeToggle);
+        updateIcons();
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.toggle('hidden'));
+        const btt = document.getElementById('back-to-top');
+        if (btt) {
+          window.addEventListener('scroll', () => {
+            if (window.innerWidth >= 768 && window.pageYOffset > 300) btt.style.display = 'flex';
+            else btt.style.display = 'none';
+          });
+          btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      })();
+    </script> </body> </html>

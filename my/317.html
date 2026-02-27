@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://fangtang.net/my/317.html"><title>闲扯一下军哥的LNMP和OneinStack，顺谈一下主机发展史 | 方糖博客</title><meta name="description" content="作为一个多年Wordpress小菜鸟（好像很多方面都是如此），从最早的虚拟主机（这玩意其实挺好的，现在想想有点 [&#38;hellip;]
+"><script>
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script><link rel="stylesheet" href="/_astro/_slug_.D6w0NibI.css"><script type="module" src="/_astro/page.V2R8AmkL.js"></script></head> <body class="min-h-screen bg-white dark:bg-dark text-gray-900 dark:text-gray-100 transition-colors flex flex-col"> <header class="sticky top-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800"> <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold hover:text-primary">方糖博客</a> <nav class="hidden md:flex items-center gap-4"> <a href="/" class="hover:text-primary">首页</a> <div class="relative group"> <button class="hover:text-primary flex items-center gap-1">分类 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button> <div class="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"> <a href="/say.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">说说</a> <a href="/it.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">IT 技术</a> <a href="/my.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">生活点滴</a> </div> </div> <a href="/tags.html" class="hover:text-primary">标签</a> <a href="/archive.html" class="hover:text-primary">归档</a><a href="/guestbook.html" class="hover:text-primary">留言</a><a href="/about.html" class="hover:text-primary">关于</a> <a href="/rss.xml" class="p-2 hover:text-primary" title="RSS"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg> </a> <a href="/search.html" class="p-2 hover:text-primary" title="搜索"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> </a> <button id="theme-toggle" class="p-2 hover:text-primary" title="切换主题"> <svg id="sun-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><path d="M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg> <svg id="moon-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </nav> <div class="flex md:hidden items-center gap-2"> <a href="/search.html" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a> <button id="mobile-menu-btn" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button> </div> </div> <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800 p-4 space-y-2 text-center"> <a href="/" class="block py-2">首页</a> <a href="/say.html" class="block py-2">说说</a> <a href="/it.html" class="block py-2">IT 技术</a> <a href="/my.html" class="block py-2">生活点滴</a> <a href="/tags.html" class="block py-2">标签</a> <a href="/archive.html" class="block py-2">归档</a><a href="/guestbook.html" class="block py-2">留言</a><a href="/about.html" class="block py-2">关于</a> </div> </header> <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full"> <article> <!-- 文章头部 --> <header class="mb-8"> <h1 class="text-3xl font-bold mb-4">闲扯一下军哥的LNMP和OneinStack，顺谈一下主机发展史</h1> <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400"> <time datetime="2016-10-26T04:16:00"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 2016年10月26日 </time> <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs"> 生活随笔 </span> </div> </header> <!-- 文章内容 --> <div class="prose dark:prose-invert max-w-none"><p>作为一个多年Wordpress小菜鸟（好像很多方面都是如此），从最早的虚拟主机（这玩意其实挺好的，现在想想有点像傻瓜机的感觉，因为只要付了钱，在后面输入一些相信自己，FTP上传文件再安装一个博客或CMS等就好了，但VPS或云主机就不一样了，两者就好比一个是精装修的单身公寓，一个是毛坯房，VPS或云主机要装系统、根据需要架设环境、上传网站及配置等等），刚开始用着虚拟主机也挺好的，但后来这“兴趣爱好”越来越多时，什么论坛了、邮箱了、多域名多空间，这些虚拟主机就吃不消了，就像前面说的虚拟主机就如同精装修的单身公寓，一两个住住尚可，多了就住不下了。那么选择VPS或云主机，问题就来了，毕竟是个“毛坯”，什么都得自己来弄（当然如果你有钱，完全可以外包，房子装修可以外包，这个也可以的了），记得自己最早的VPS上装的是Win2003的系统（没办法就对微软的系统熟悉，相信很多人都这样），想想那些Linux系统（一天到晚的黑着个“脸”），想架个环境只能靠打码，只能先作罢。用了一段时间的Windows系统，发现一个问题，因为当时贪便宜买的是低配的主机，结果时间长了网站打开速度就慢，重启一下就好多了，所以又养成了定期重启系统的习惯。经历过一段时间以后，觉得应该向Linux系统发展，为什么呢？你可以发现很多这方面的论坛上都在说，Linux的主机如何的稳定，而且基本上从来不关机（除非运营商出问题），心痒了又动手了，由于那时还是不了解Linux，听说有面板这一好东西，选来选去，选了个WDCP，确实挺好的，那些打码的事少了，只要跟着教程（其实现在很多时候我也是这样的）配置好面板就好了，余下的像网站管理什么的面板统统可以Hold住（好东西吧）。好景不长，刚好那段时间赶上WDCP爆出有漏洞，又担心影响自己，决定要换，在各大论坛打探了一番，听说除了面板，还是一键脚本可以快速架设所需要网站环境，那时一搜就找到了军哥的LNMP，<br /><img decoding="async" src="https://cdn.uu126.cn/wp-content/uploads/2016/10/lnmmp.org_.png" alt="请输入图片描述" title="请输入图片描述"><br />确实挺好的，只要跟着安装教程走，就成功架设好网站环境，而且运行也非常稳定（这也得益于我后来的云主机——阿里云），网站打开速度都还OK的，基本上除了我有时手痒要去弄个东西重启外，就没出现问题过，而且军哥的脚本年份早、使用人数多，所以真的遇到军哥网上没有的答案，也可以在百度随便找到。或许也因为如此吧（个人猜想的），军哥平常也很少更新，除非有重大漏洞或BUG，正常情况下每年6.1更新（不知道是不是军哥非常怀念儿童节的缘故，反正近几年都是6.1上更新包）。由于军哥的主机都是在国外，加上目前国内主机没有，所以这也导致国内网站在下载脚本安装包时速度上相对要慢一点，所以有下载好的可以保存一下，下次如果主机有需要可以再上传使用（希望军哥的国内节点可以早日恢复）。</p>
+<p>脚本优点：lnmp脚本毕竟有一定的年头，算是比较成熟的脚本，而且网上的文档比较多，遇到问题还可以比较方便的找到解决方法。可以快速的安装较新版本的PHP、MySQL等软件的nginx、apache web环境。</p>
+<p>再来说一下近年来很火的OneinStack，这是来自Linuxeye博主独立出来的一键包程序，虽然起步没有Lnmp早，但是在最近发展还是很迅猛的，主要是更新很快，能够快速的更新当前最新的软件版本，以及可以有各种组合安装。比如可以快速安装lnmp、lamp、lnmpa、lnmt。</p>
+<p><img decoding="async" src="https://cdn.uu126.cn/wp-content/uploads/2016/10/OneinStack.png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>脚本优点：oneinstack一键脚本虽然不算新，但是经过这段时间的发展已经被广大用户实践过，基本上也没有较大的问题，而且可以根据实际的需要选择各种组合和各种软件的版本。</p>
+<p>本人博客站目前用的主机，就是用OneinStack架设的，而且还发现一个好处，就是Https配置，我原来同样的配置办法在军哥的LNMP上死活没配成（可能是技术不到家吧），但在OneinStack上却一次成功，都是OneinStack功能强大（反正我是这么觉着），终于体验到了（军哥莫怪哈），OneinStack现在的更新还是很及时的，几乎隔一段就会更新一下，所以要体验这种新鲜感的可以使用OneinStack看看。</p>
+<p>小总结：除了军哥的LNMP、OneinStack以外还有很多家，比如：LAMP、LTMP等，其实不管什么一键包脚本，只要自己觉得用着顺手就行，毕竟主要目的都是一样的，通过一键包脚本，把原来复杂的打码过程简化了，也使初学者对Linux系统不在那么陌生，也更容易的配置好网站环境、同时也慢慢的提高了自己的技能。</p>
+</div> <!-- 评论 --> <div id="artalk-container" class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700"> <div id="Comments"></div> </div> <!-- Artalk 样式与脚本 --> <link href="https://my-blog.s3.bitiful.net/Artalk/Artalk.css" rel="stylesheet"> <script src="https://my-blog.s3.bitiful.net/Artalk/Artalk.js"></script> <script>
+  function initArtalk() {
+    const container = document.querySelector('#Comments');
+    if (!container) return;
+
+    if (window.artalk) {
+      window.artalk.destroy();
+    }
+
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    // 初始化 Artalk
+    window.artalk = Artalk.init({
+      el: '#Comments',
+      pageKey: window.location.pathname,
+      pageTitle: document.title,
+      server: 'https://talk.057000.xyz',
+      site: '方糖博客',
+      darkMode: isDark,
+      // 增加调试模式，方便在控制台看到更多信息
+      pv: true
+    });
+  }
+
+  // 适配 Astro 生命周期
+  document.addEventListener('astro:page-load', initArtalk);
+  
+  // 确保首次加载也执行
+  if (document.readyState === 'complete') {
+    initArtalk();
+  } else {
+    window.addEventListener('load', initArtalk);
+  }
+
+  // 主题切换监听
+  const observer = new MutationObserver(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (window.artalk) window.artalk.setDarkMode(isDark);
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+</script> </article> </main> <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-gray-500 text-sm"> <p>&copy; 2012-2026 方糖博客 · 基于 Astro + WordPress</p> <p><span class="mobile-hide"> <a href="https://icp.gov.moe/?keyword=20229988" target="_blank">萌ICP备20229988号</a> · 托管于：<a href="https://hostdzire.com/billing/index.php" target="_blank" rel="nofollow"> HostDZire </a> · 使用<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="nofollow"> 又拍云 </a></span></p> </footer> <button id="back-to-top" style="display: none;" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary/80 transition-all z-50 items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg> </button> <script>
+      (function() {
+        const themeToggle = () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          updateIcons();
+        };
+        const updateIcons = () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          const sun = document.getElementById('sun-icon');
+          const moon = document.getElementById('moon-icon');
+          if (sun) sun.classList.toggle('hidden', !isDark);
+          if (moon) moon.classList.toggle('hidden', isDark);
+        };
+        document.getElementById('theme-toggle')?.addEventListener('click', themeToggle);
+        updateIcons();
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.toggle('hidden'));
+        const btt = document.getElementById('back-to-top');
+        if (btt) {
+          window.addEventListener('scroll', () => {
+            if (window.innerWidth >= 768 && window.pageYOffset > 300) btt.style.display = 'flex';
+            else btt.style.display = 'none';
+          });
+          btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      })();
+    </script> </body> </html>

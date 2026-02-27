@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://fangtang.net/my/350.html"><title>分享本站的音乐播放器代码版（带安装说明） | 方糖博客</title><meta name="description" content="抽个空浏览了一下众大侠的博客，发觉我自从用上Typecho后，对Wordpress的事关注度明显下降了（对不住 [&#38;hellip;]
+"><script>
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script><link rel="stylesheet" href="/_astro/_slug_.D6w0NibI.css"><script type="module" src="/_astro/page.V2R8AmkL.js"></script></head> <body class="min-h-screen bg-white dark:bg-dark text-gray-900 dark:text-gray-100 transition-colors flex flex-col"> <header class="sticky top-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800"> <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold hover:text-primary">方糖博客</a> <nav class="hidden md:flex items-center gap-4"> <a href="/" class="hover:text-primary">首页</a> <div class="relative group"> <button class="hover:text-primary flex items-center gap-1">分类 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button> <div class="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"> <a href="/say.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">说说</a> <a href="/it.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">IT 技术</a> <a href="/my.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">生活点滴</a> </div> </div> <a href="/tags.html" class="hover:text-primary">标签</a> <a href="/archive.html" class="hover:text-primary">归档</a><a href="/guestbook.html" class="hover:text-primary">留言</a><a href="/about.html" class="hover:text-primary">关于</a> <a href="/rss.xml" class="p-2 hover:text-primary" title="RSS"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg> </a> <a href="/search.html" class="p-2 hover:text-primary" title="搜索"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> </a> <button id="theme-toggle" class="p-2 hover:text-primary" title="切换主题"> <svg id="sun-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><path d="M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg> <svg id="moon-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </nav> <div class="flex md:hidden items-center gap-2"> <a href="/search.html" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a> <button id="mobile-menu-btn" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button> </div> </div> <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800 p-4 space-y-2 text-center"> <a href="/" class="block py-2">首页</a> <a href="/say.html" class="block py-2">说说</a> <a href="/it.html" class="block py-2">IT 技术</a> <a href="/my.html" class="block py-2">生活点滴</a> <a href="/tags.html" class="block py-2">标签</a> <a href="/archive.html" class="block py-2">归档</a><a href="/guestbook.html" class="block py-2">留言</a><a href="/about.html" class="block py-2">关于</a> </div> </header> <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full"> <article> <!-- 文章头部 --> <header class="mb-8"> <h1 class="text-3xl font-bold mb-4">分享本站的音乐播放器代码版（带安装说明）</h1> <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400"> <time datetime="2016-12-31T01:47:00"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 2016年12月31日 </time> <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs"> 生活随笔 </span> </div> </header> <!-- 文章内容 --> <div class="prose dark:prose-invert max-w-none"><p>抽个空浏览了一下众大侠的博客，发觉我自从用上Typecho后，对Wordpress的事关注度明显下降了（对不住哈），这不昨天浏览到一同类（同Typecho博客）的音乐播放器分享，看了看觉得可以放在自己的网站上显摆一下，那就动手吧！先下载好相关的CSS和JS文件，并上传到主题目录下，顺便对这个播放器简单介绍一下：这款音乐播放器的插件版，插件版有一个好处就是带后台，有按钮控制；而无插件就是通过直接改代码的形式了，比如：自动播放、换个歌啥的，但身为强迫症严重的我，绝对不允许插件太多的存在（受之前WordPress影响）；</p>
+<p>废话不多说，代码我放到资源文件里了（补上一个文件下载链接：<a href="https://pan.baidu.com/s/1skX9vCp"><a href="https://pan.baidu.com/s/1skX9vCp">https://pan.baidu.com/s/1skX9vCp</a></a> 密码: gfue ），下面就跟着我一二三吧：<br />uu126_yinyue.png<br />1、打开主题目录下的head.php（路径相信大家能明白在哪里吧），插入以下代码：</p>
+<p>这个自己看着改哈，改好后上传覆盖。<br />2、打开主题目录下的index.php，插入以下代码：</p>
+<pre><code class="lang-php">
+         Title  -  Artist
+          0:00
+    var    playlist = [
+{title:&quot;为你我受冷风吹&quot;,artist:&quot;胡彦斌&quot;,mp3:&quot;http://p2.music.126.net/SAtMXu_B_yhBwdh4KNIk4A==/5861496487788143.mp3&quot;,cover:&quot;http://p3.music.126.net/cUe-0OA62K0EyXWoRMY4oA==/5902178418015672.jpg?param=106x106&quot;,},
+{title:&quot;遇见&quot;,artist:&quot;杨搏&quot;,mp3:&quot;http://p2.music.126.net/wKgEGTTHZIIXLg9UCHxvoA==/6049512976551370.mp3&quot;,cover:&quot;http://p3.music.126.net/V04YNVpmNU6L3vDvzpzlbg==/3284241233642899.jpg?param=106x106&quot;,},
+{title:&quot;我们好像在哪见过&quot;,artist:&quot;小柯&quot;,mp3:&quot;http://p2.music.126.net/kTFnbtNodo4nL7WLX0tlSg==/5848302348252295.mp3&quot;,cover:&quot;http://p4.music.126.net/83MGbAjAkLx_9Pk9gpcqsA==/1903254627802817.jpg?param=106x106&quot;,},
+{title:&quot;你要的不是我&quot;,artist:&quot;徐小薇&quot;,mp3:&quot;http://p2.music.126.net/rRbpD6-K12YmlReMe76QMQ==/8931332952433800.mp3&quot;,cover:&quot;http://p3.music.126.net/OcuKe1XXheDa2y_zDlVIfA==/3294136838291281.jpg?param=106x106&quot;,},
+{title:&quot;想把我唱给你听&quot;,artist:&quot;老狼&quot;,mp3:&quot;http://p2.music.126.net/qYHze3h07IqDdV6YSy3uQA==/5992338371393361.mp3&quot;,cover:&quot;http://p4.music.126.net/-7gL1G_kVsgIb7eAFyQdNA==/3262251001467551.jpg?param=106x106&quot;,},
+{title:&quot;丁香花&quot;,artist:&quot;周玥&quot;,mp3:&quot;http://p2.music.126.net/RNenjbsCEeeI2bnGB4EcPg==/2903810210384172.mp3&quot;,cover:&quot;http://p4.music.126.net/O0MbXlINzZabpOEjZA-otA==/2929098977807667.jpg?param=106x106&quot;,},
+{title:&quot;喜欢两个人&quot;,artist:&quot;彭佳慧&quot;,mp3:&quot;http://p2.music.126.net/E5X5r0w_MgUilKBDpz9Log==/7936274930834753.mp3&quot;,cover:&quot;http://p3.music.126.net/GpsgjHB_9XgtrBVXt8XX4w==/93458488373078.jpg?param=106x106&quot;,},
+{title:&quot;约定&quot;,artist:&quot;光良&quot;,mp3:&quot;http://p2.music.126.net/K2GgsEh7WdPIU8QisLLH0A==/3213872487990028.mp3&quot;,cover:&quot;http://p4.music.126.net/Zxzq0d-ZD2W0c43yczQMgw==/65970697678836.jpg?param=106x106&quot;,},
+{title:&quot;if you英文版&quot;,artist:&quot;夏娜hana&quot;,mp3:&quot;http://p2.music.126.net/muO1bPmOIHQbaVP1qkxgEA==/3265549585968005.mp3&quot;,cover:&quot;http://p4.music.126.net/N7ZkbcECBAj_7BHARqotHQ==/17784600579616648.jpg?param=106x106&quot;,},
+{title:&quot;男孩别哭&quot;,artist:&quot;海龟先生&quot;,mp3:&quot;http://p2.music.126.net/JNMhi2SCp9ief3mHmKqMjA==/3294136836885992.mp3&quot;,cover:&quot;http://p4.music.126.net/tOhom1sERa_KgoA78Pqa1Q==/2423323627633522.jpg?param=106x106&quot;,},
+{title:&quot;红山果&quot;,artist:&quot;安与骑兵&quot;,mp3:&quot;http://p2.music.126.net/85KftQ_p5h_7ONBpsmVBpQ==/5710863394757725.mp3&quot;,cover:&quot;http://p3.music.126.net/tBHbunQa_Ou4UK8jAversw==/71468255819741.jpg?param=106x106&quot;,},
+{title:&quot;红山果&quot;,artist:&quot;安与骑兵&quot;,mp3:&quot;http://p2.music.126.net/zbTjTGWDnFkZ08BFMyczKA==/5907675976114699.mp3&quot;,cover:&quot;http://p4.music.126.net/ufbEesesjI7ctcHej_RI1w==/5741649720316074.jpg?param=106x106&quot;,},
+{title:&quot;解药&quot;,artist:&quot;孙紫晴&quot;,mp3:&quot;http://p2.music.126.net/b9VwYHFBBV2b6dhaue9hbg==/5688873162187786.mp3&quot;,cover:&quot;http://p4.music.126.net/jmWuDwUSs409gvNDKCZCnw==/708085488322985.jpg?param=106x106&quot;,},
+{title:&quot;你的配角&quot;,artist:&quot;回音哥&quot;,mp3:&quot;http://p2.music.126.net/-6g1zxGU2XV4-pnEq2BlXA==/2896113628262462.mp3&quot;,cover:&quot;http://p4.music.126.net/onh_PZ5xFarv0wAyU9mWIQ==/2926899953762176.jpg?param=106x106&quot;,},
+{title:&quot;爱呀&quot;,artist:&quot;金玟岐&quot;,mp3:&quot;http://p2.music.126.net/H3Sby1SGWifhp7qMW-dW7Q==/3413983621387083.mp3&quot;,cover:&quot;http://p3.music.126.net/54wdQi_3rpjreY2oo2jb7w==/5998935441219557.jpg?param=106x106&quot;,},
+{title:&quot;安静｜尤克里里弹唱&quot;,artist:&quot;柠檬树组合&quot;,mp3:&quot;http://p2.music.126.net/eEDbv4uczl2UsxmSgqMN4g==/3446968964382378.mp3&quot;,cover:&quot;http://p4.music.126.net/iCNRpAF-tSld5XmvAt0S8g==/18227703765715979.jpg?param=106x106&quot;,},
+{title:&quot;离开的理由&quot;,artist:&quot;牛奶咖啡&quot;,mp3:&quot;http://p2.music.126.net/9sh8IrM8O2_14Cs8p3AcEw==/7976956861040239.mp3&quot;,cover:&quot;http://p4.music.126.net/LQ2iUKlZwqGMysGkeCR4ww==/27487790697969.jpg?param=106x106&quot;,},
+{title:&quot;听你说&quot;,artist:&quot;冯提莫&quot;,mp3:&quot;http://p2.music.126.net/coSRt9v9SMuIkwezzD4QqQ==/3417282155936067.mp3&quot;,cover:&quot;http://p3.music.126.net/25hlFe80WxDyQmu41JMh4Q==/109951162812868479.jpg?param=106x106&quot;,},
+{title:&quot;孤单北半球&quot;,artist:&quot;欧得洋&quot;,mp3:&quot;http://p2.music.126.net/48AmHcM9j9xZ0aclaHx77Q==/1252343744079893.mp3&quot;,cover:&quot;http://p3.music.126.net/OTa-ZJkkiV208--vw-hacg==/124244813939534.jpg?param=106x106&quot;,},
+{title:&quot;原谅&quot;,artist:&quot;张玉华&quot;,mp3:&quot;http://p2.music.126.net/BNTFaNAVmryQkoyuMTvIWw==/3442570907099641.mp3&quot;,cover:&quot;http://p4.music.126.net/KdaoMSlxYxR7Z2fIeZrFXQ==/114349209304385.jpg?param=106x106&quot;,},
+{title:&quot;七月上&quot;,artist:&quot;Jam&quot;,mp3:&quot;http://p2.music.126.net/K1SFXCvWf8BO9VEpSvx2ew==/7967061257205150.mp3&quot;,cover:&quot;http://p3.music.126.net/9kZl6NRj3HxmQQ8DqTjZ4Q==/17729624997966923.jpg?param=106x106&quot;,},
+{title:&quot;想你零点零一分－徐薇&quot;,artist:&quot;徐薇&quot;,mp3:&quot;http://p2.music.126.net/_qn7SA6RJmPw05gzdppMOw==/3394192431674152.mp3&quot;,cover:&quot;http://p4.music.126.net/nVoSV6uA0MURcTfgvnQ_zw==/18024294114341058.jpg?param=106x106&quot;,},
+{title:&quot;对不起我爱你&quot;,artist:&quot;蔡淳佳&quot;,mp3:&quot;http://p2.music.126.net/gMUJGPHoLzPskorPU6rqtw==/1167681348705703.mp3&quot;,cover:&quot;http://p3.music.126.net/KwmbwhwG3-bAoI-KAI0vmg==/39582418613244.jpg?param=106x106&quot;,},
+{title:&quot;一生有你&quot;,artist:&quot;周玥&quot;,mp3:&quot;http://p2.music.126.net/jt97yCFUuh8_w2ALRSk97g==/7698780419305871.mp3&quot;,cover:&quot;http://p4.music.126.net/O0MbXlINzZabpOEjZA-otA==/2929098977807667.jpg?param=106x106&quot;,},
+{title:&quot;撕夜&quot;,artist:&quot;阿杜&quot;,mp3:&quot;http://p2.music.126.net/U2m6b6xYhW5HszmGIIksEg==/7994549047223488.mp3&quot;,cover:&quot;http://p4.music.126.net/C71BhIuR2l6pg7Dhz2MFcg==/76965813944980.jpg?param=106x106&quot;,},
+{title:&quot;如果你也听说&quot;,artist:&quot;张惠妹&quot;,mp3:&quot;http://p2.music.126.net/VJ8F5FMsBlxy2frn71Grxw==/6622358534172426.mp3&quot;,cover:&quot;http://p3.music.126.net/X4r7ThHc-uAcxEXvZ4G0mA==/6661940952772237.jpg?param=106x106&quot;,},
+{title:&quot;第一次&quot;,artist:&quot;光良&quot;,mp3:&quot;http://p2.music.126.net/vNt2dWuyzm_f0GMEAEVCsA==/7930777372743720.mp3&quot;,cover:&quot;http://p3.music.126.net/IFjMWxtDuOnjdgmkUb-TjQ==/39582418611956.jpg?param=106x106&quot;,},
+{title:&quot;你妈逼你结婚了吗&quot;,artist:&quot;小缘&quot;,mp3:&quot;http://p2.music.126.net/Kz05PKFbp6nB3NFmLLELuw==/3235862721256261.mp3&quot;,cover:&quot;http://p4.music.126.net/2XLMVZhzVZCOunaRCOQ7Bg==/3274345629219531.jpg?param=106x106&quot;,},
+{title:&quot;写给我第一个喜欢的女孩的歌&quot;,artist:&quot;西瓜Kune&quot;,mp3:&quot;http://p2.music.126.net/tFxdXMfc-9ySURiQ-pWY7g==/2946691230466209.mp3&quot;,cover:&quot;http://p3.music.126.net/hdrjFYPZXd2HgL-3OMlDIw==/18290375928279193.jpg?param=106x106&quot;,},
+{title:&quot;黑猫&quot;,artist:&quot;泠鸢yousa&quot;,mp3:&quot;http://p2.music.126.net/6t1QeZCpUzHPIbcnow9zHw==/7948369557601218.mp3&quot;,cover:&quot;http://p3.music.126.net/GQ9JkLt6QBaAoLbJ8UOoCQ==/3406287023862462.jpg?param=106x106&quot;,},
+{title:&quot;吵架歌&quot;,artist:&quot;叶洛洛&quot;,mp3:&quot;http://p2.music.126.net/Bw4JNsNpqmyYojrGbfmfLA==/1385384666705656.mp3&quot;,cover:&quot;http://p4.music.126.net/ADwGmh2dm5rlnQiOfO_eQg==/17810988858699279.jpg?param=106x106&quot;,},
+{title:&quot;岁月神偷&quot;,artist:&quot;金玟岐&quot;,mp3:&quot;http://p2.music.126.net/0443RBA9VVlBGMDTHn2mTA==/1420569036314644.mp3&quot;,cover:&quot;http://p3.music.126.net/54wdQi_3rpjreY2oo2jb7w==/5998935441219557.jpg?param=106x106&quot;,},
+{title:&quot;大笨钟&quot;,artist:&quot;刘瑞琦&quot;,mp3:&quot;http://p2.music.126.net/iU_6fBQIDUVjJDx0k2stNA==/7974757837784826.mp3&quot;,cover:&quot;http://p3.music.126.net/q-xabCVVQ2A0ZEdo1TNKOg==/3283141722234741.jpg?param=106x106&quot;,},
+{title:&quot;夏天的风&quot;,artist:&quot;刘瑞琦&quot;,mp3:&quot;http://p2.music.126.net/mJmlquq1eJhL1t3VwAZPUw==/3156697883395736.mp3&quot;,cover:&quot;http://p3.music.126.net/_RDkx-1ALrisLhdpTAg5_Q==/2457408488136735.jpg?param=106x106&quot;,},
+{title:&quot;黑色毛衣&quot;,artist:&quot;刘瑞琦&quot;,mp3:&quot;http://p2.music.126.net/Iq6fiMwhbP_bu668kx_bVw==/7742760882949101.mp3&quot;,cover:&quot;http://p3.music.126.net/obZy1mbYWFJtbyr26Q6Smg==/7749357952693832.jpg?param=106x106&quot;,},
+{title:&quot;可爱女人&quot;,artist:&quot;刘瑞琦&quot;,mp3:&quot;http://p2.music.126.net/yE_njD0DNqh0DSaP3zyJxg==/7715273092246122.mp3&quot;,cover:&quot;http://p3.music.126.net/obZy1mbYWFJtbyr26Q6Smg==/7749357952693832.jpg?param=106x106&quot;,},
+{title:&quot;晴天&quot;,artist:&quot;刘瑞琦&quot;,mp3:&quot;http://p2.music.126.net/oxP2XaJFDscDuGhGnO7beA==/7768049650386454.mp3&quot;,cover:&quot;http://p4.music.126.net/obZy1mbYWFJtbyr26Q6Smg==/7749357952693832.jpg?param=106x106&quot;,},
+{title:&quot;房间&quot;,artist:&quot;刘瑞琦&quot;,mp3:&quot;http://p2.music.126.net/XWiUfSO2te8Ud80DJW-xhA==/3253454906690339.mp3&quot;,cover:&quot;http://p4.music.126.net/hOr_kcXuEDIsQ0JK1HOewQ==/5698768766875669.jpg?param=106x106&quot;,},
+{title:&quot;发如雪&quot;,artist:&quot;徐薇&quot;,mp3:&quot;http://p2.music.126.net/3GID47cBAp7KXP0xic4ulA==/7960464186523477.mp3&quot;,cover:&quot;http://p3.music.126.net/lFj9dsCs9ucmrZlUQ_NcKQ==/3273246117440964.jpg?param=106x106&quot;,},
+{title:&quot;你还要我怎样－徐薇&quot;,artist:&quot;徐薇&quot;,mp3:&quot;http://p2.music.126.net/BX3Yve3MgZRv_N5rXMkg9g==/3420580746165870.mp3&quot;,cover:&quot;http://p3.music.126.net/nVoSV6uA0MURcTfgvnQ_zw==/18024294114341058.jpg?param=106x106&quot;,},
+{title:&quot;夜空中最亮的星&quot;,artist:&quot;徐小薇&quot;,mp3:&quot;http://p2.music.126.net/15SO8H57d36vDZmqG_MbLw==/5853799906501854.mp3&quot;,cover:&quot;http://p4.music.126.net/D22IKBn-eUq-EebVSbAuJA==/5934064255276851.jpg?param=106x106&quot;,},
+{title:&quot;那么骄傲&quot;,artist:&quot;周玥&quot;,mp3:&quot;http://p2.music.126.net/zBvbSjCuQJHWme9QjEtUzg==/2917004349902345.mp3&quot;,cover:&quot;http://p4.music.126.net/O0MbXlINzZabpOEjZA-otA==/2929098977807667.jpg?param=106x106&quot;,},
+{title:&quot;我以为&quot;,artist:&quot;徐薇&quot;,mp3:&quot;http://p2.music.126.net/vFABwceFwRDthO4BlEai2w==/5773535557680612.mp3&quot;,cover:&quot;http://p3.music.126.net/d5yZbhgszplRTcnNCROW-g==/3382097768286533.jpg?param=106x106&quot;,},
+];
+  var isRotate = true;
+  var controls = true;
+function bgChange(){
+    var lis= $('.lib');</code></pre>
+</div> <!-- 评论 --> <div id="artalk-container" class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700"> <div id="Comments"></div> </div> <!-- Artalk 样式与脚本 --> <link href="https://my-blog.s3.bitiful.net/Artalk/Artalk.css" rel="stylesheet"> <script src="https://my-blog.s3.bitiful.net/Artalk/Artalk.js"></script> <script>
+  function initArtalk() {
+    const container = document.querySelector('#Comments');
+    if (!container) return;
+
+    if (window.artalk) {
+      window.artalk.destroy();
+    }
+
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    // 初始化 Artalk
+    window.artalk = Artalk.init({
+      el: '#Comments',
+      pageKey: window.location.pathname,
+      pageTitle: document.title,
+      server: 'https://talk.057000.xyz',
+      site: '方糖博客',
+      darkMode: isDark,
+      // 增加调试模式，方便在控制台看到更多信息
+      pv: true
+    });
+  }
+
+  // 适配 Astro 生命周期
+  document.addEventListener('astro:page-load', initArtalk);
+  
+  // 确保首次加载也执行
+  if (document.readyState === 'complete') {
+    initArtalk();
+  } else {
+    window.addEventListener('load', initArtalk);
+  }
+
+  // 主题切换监听
+  const observer = new MutationObserver(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (window.artalk) window.artalk.setDarkMode(isDark);
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+</script> </article> </main> <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-gray-500 text-sm"> <p>&copy; 2012-2026 方糖博客 · 基于 Astro + WordPress</p> <p><span class="mobile-hide"> <a href="https://icp.gov.moe/?keyword=20229988" target="_blank">萌ICP备20229988号</a> · 托管于：<a href="https://hostdzire.com/billing/index.php" target="_blank" rel="nofollow"> HostDZire </a> · 使用<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="nofollow"> 又拍云 </a></span></p> </footer> <button id="back-to-top" style="display: none;" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary/80 transition-all z-50 items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg> </button> <script>
+      (function() {
+        const themeToggle = () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          updateIcons();
+        };
+        const updateIcons = () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          const sun = document.getElementById('sun-icon');
+          const moon = document.getElementById('moon-icon');
+          if (sun) sun.classList.toggle('hidden', !isDark);
+          if (moon) moon.classList.toggle('hidden', isDark);
+        };
+        document.getElementById('theme-toggle')?.addEventListener('click', themeToggle);
+        updateIcons();
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.toggle('hidden'));
+        const btt = document.getElementById('back-to-top');
+        if (btt) {
+          window.addEventListener('scroll', () => {
+            if (window.innerWidth >= 768 && window.pageYOffset > 300) btt.style.display = 'flex';
+            else btt.style.display = 'none';
+          });
+          btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      })();
+    </script> </body> </html>

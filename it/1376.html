@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://fangtang.net/it/1376.html"><title>给博客加一个Service Worker耍耍 | 方糖博客</title><meta name="description" content="先说个题外话，上次抄了沉沦大佬的作业《适配评论头像本地缓存功能》，实现了头像下载并缓存到主机上，加快了头像的加 [&#38;hellip;]
+"><script>
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script><link rel="stylesheet" href="/_astro/_slug_.D6w0NibI.css"><script type="module" src="/_astro/page.V2R8AmkL.js"></script></head> <body class="min-h-screen bg-white dark:bg-dark text-gray-900 dark:text-gray-100 transition-colors flex flex-col"> <header class="sticky top-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800"> <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold hover:text-primary">方糖博客</a> <nav class="hidden md:flex items-center gap-4"> <a href="/" class="hover:text-primary">首页</a> <div class="relative group"> <button class="hover:text-primary flex items-center gap-1">分类 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button> <div class="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"> <a href="/say.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">说说</a> <a href="/it.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">IT 技术</a> <a href="/my.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">生活点滴</a> </div> </div> <a href="/tags.html" class="hover:text-primary">标签</a> <a href="/archive.html" class="hover:text-primary">归档</a><a href="/guestbook.html" class="hover:text-primary">留言</a><a href="/about.html" class="hover:text-primary">关于</a> <a href="/rss.xml" class="p-2 hover:text-primary" title="RSS"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg> </a> <a href="/search.html" class="p-2 hover:text-primary" title="搜索"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> </a> <button id="theme-toggle" class="p-2 hover:text-primary" title="切换主题"> <svg id="sun-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><path d="M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg> <svg id="moon-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </nav> <div class="flex md:hidden items-center gap-2"> <a href="/search.html" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a> <button id="mobile-menu-btn" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button> </div> </div> <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800 p-4 space-y-2 text-center"> <a href="/" class="block py-2">首页</a> <a href="/say.html" class="block py-2">说说</a> <a href="/it.html" class="block py-2">IT 技术</a> <a href="/my.html" class="block py-2">生活点滴</a> <a href="/tags.html" class="block py-2">标签</a> <a href="/archive.html" class="block py-2">归档</a><a href="/guestbook.html" class="block py-2">留言</a><a href="/about.html" class="block py-2">关于</a> </div> </header> <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full"> <article> <!-- 文章头部 --> <header class="mb-8"> <h1 class="text-3xl font-bold mb-4">给博客加一个Service Worker耍耍</h1> <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400"> <time datetime="2025-03-07T22:31:37"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 2025年3月7日 </time> <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs"> IT网络 </span> </div> </header> <!-- 文章内容 --> <div class="prose dark:prose-invert max-w-none">
+<p>先说个题外话，上次抄了沉沦大佬的作业《<a href="https://kkn.me/3933.html" title="适配评论头像本地缓存功能">适配评论头像本地缓存功能</a>》，实现了头像下载并缓存到主机上，加快了头像的加载速度，不过在我的博客上却碰了一些问题：一些没有头像或头像链接失效的，就拖慢了页面有显示，最终交由DeepSeek修正了下，完美解决了我的这个问题，涉及的部分代码如下：</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">// 定义头像缓存目录
+define('AVATAR_CACHE_DIR', WP_CONTENT_DIR . '/avatars');
+// 定义头像缓存URL
+define('AVATAR_CACHE_URL', WP_CONTENT_URL . '/avatars');
+// 定义头像缓存有效期，默认7天
+define('AVATAR_CACHE_LIFETIME', apply_filters('avatar_cache_lifetime', 7 * DAY_IN_SECONDS));
+// 定义头像最大存储时间，默认30天
+define('AVATAR_CLEANUP_AGE', apply_filters('avatar_max_age', 30 * DAY_IN_SECONDS));
+// 定义默认头像URL
+define('DEFAULT_AVATAR_URL', '/wp-content/uploads/2025/03/default.webp');
+
+/**
+ * 缓存用户头像到本地
+ *
+ * @param string $email 用户邮箱
+ * @param array $args 头像参数
+ * @return string 头像URL
+ */
+function cache_avatar_locally($email, $args = array()) {
+    // 检查WP_Filesystem函数是否存在，若不存在则加载文件操作类
+    if (!function_exists('WP_Filesystem')) {
+        require_once ABSPATH . 'wp-admin/includes/file.php';
+    }
+    WP_Filesystem();
+    global $wp_filesystem;
+    // 默认头像参数
+    $default_args = array(
+        'default' =&gt; DEFAULT_AVATAR_URL,
+        'size'    =&gt; 96,
+        'rating'  =&gt; 'g',
+        'scheme'  =&gt; null
+    );
+    $args = wp_parse_args($args, $default_args);
+    $args = apply_filters('avatar_cache_params', $args, $email);
+    // 对参数进行排序，以确保生成一致的hash值
+    $sorted_args = ksort_deep($args);
+    $param_string = http_build_query($sorted_args);
+    // 根据用户邮箱和参数生成唯一的hash值
+    $hash = md5(strtolower(trim($email)) . '|' . $param_string);
+    $base_path = AVATAR_CACHE_DIR . '/' . $hash;
+    // 查找是否已有缓存的头像文件
+    $avatar_file = find_existing_avatar($base_path);
+    if ($avatar_file) {
+        // 如果头像文件存在且需要刷新，则安排刷新操作
+        if (should_refresh_avatar($avatar_file)) {
+            schedule_avatar_refresh($email, $args);
+        }
+        // 返回头像的URL
+        return str_replace(AVATAR_CACHE_DIR, AVATAR_CACHE_URL, $avatar_file);
+    }
+    // 获取Gravatar头像URL
+    $gravatar_url = get_avatar_url($email, $args);
+    // 获取头像内容
+    $response = wp_remote_get($gravatar_url, array('timeout' =&gt; 10));
+    // 如果请求失败，则返回默认头像URL
+    if (is_wp_error($response) || 200 !== wp_remote_retrieve_response_code($response)) {
+        return $args['default'];
+    }
+    // 获取图片类型
+    $content_type = wp_remote_retrieve_header($response, 'content-type');
+    // 获取文件扩展名
+    $ext = get_extension_from_mime($content_type);
+    // 设置缓存头像的路径
+    $avatar_path = "{$base_path}.{$ext}";
+    $avatar_dir = dirname($avatar_path);
+    // 如果缓存目录不存在，则创建目录
+    if (!file_exists($avatar_dir)) {
+        wp_mkdir_p($avatar_dir);
+    }
+    // 将头像内容保存到本地
+    if ($wp_filesystem-&gt;put_contents($avatar_path, wp_remote_retrieve_body($response), 0644)) {
+        return AVATAR_CACHE_URL . "/{$hash}.{$ext}";
+    }
+    // 如果保存失败，则返回默认头像URL
+    return $args['default'];
+}
+
+/**
+ * 深度排序数组
+ *
+ * @param array $array 输入数组
+ * @return array 排序后的数组
+ */
+function ksort_deep($array) {
+    if (is_array($array)) {
+        ksort($array);
+        foreach ($array as $key =&gt; $value) {
+            $array[$key] = ksort_deep($value);
+        }
+    }
+    return $array;
+}
+
+/**
+ * 查找已存在的头像文件
+ *
+ * @param string $base_path 头像缓存基础路径
+ * @return string|null 头像文件路径，若没有则返回null
+ */
+function find_existing_avatar($base_path) {
+    $files = glob("{$base_path}.*");
+    foreach ($files as $file) {
+        if (is_file($file) &amp;&amp; in_array(pathinfo($file, PATHINFO_EXTENSION), ['jpg', 'jpeg', 'png', 'webp'])) {
+            return $file;
+        }
+    }
+    return null;
+}</code></pre>
+
+
+
+<p><img decoding="async" src="https://fangtang.net/wp-content/uploads/2025/03/20250307221718523.webp" alt=""><br>
+好了，言归正传，开始今天的唠叨话题吧——给博客加个Service Workers，网上类似的代码有很多，有些甚至还要收费（小小鄙视一下），好在现在各种AI工具加持，终于有了适合自己的代码，大概的步骤如下：</p>
+
+
+
+<ul class="wp-block-list">
+<li>在网站根目录下创建sw.js文件，这个在移动终端上也适应了（之前出现了电脑端访问时头像显示正常，在移动端时无法显示），大致的内容如下：</li>
+</ul>
+
+
+
+<pre class="wp-block-code"><code lang="javascript" class="language-javascript">// 配置中心
+const CACHE_NAME = 'wp-sw-desktop-v2';
+const OFFLINE_URL = '/offline.html';
+const VALID_SCHEMES = ['http:', 'https:'];
+const STATIC_EXTS = ['css', 'js', 'png', 'jpg', 'webp', 'svg'];
+const UPLOAD_PATHS = ['/wp-content/uploads/', '/wp-content/avatars/'];
+// 预缓存清单（桌面端专用）
+const PRECACHE_RESOURCES = [
+  '/',
+  '/index.php',
+  '/wp-content/themes/主题/style.css',
+  '/wp-content/themes/主题/static/helper.js',
+  '/wp-content/themes/主题/static/lang.js',
+  '/wp-content/themes/主题/static/script.js',
+  '/wp-content/themes/主题/static/modules.js',
+  '/wp-content/themes/主题/static/package.js',
+  '/favicon.ico',
+  OFFLINE_URL
+];
+// 安装阶段：增强型预缓存
+self.addEventListener('install', (event) =&gt; {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache =&gt; {
+        return Promise.all(
+          PRECACHE_RESOURCES.map(url =&gt; 
+            cache.add(url).catch(err =&gt; 
+              console.error(`预缓存失败: ${url}`, err)
+            )
+          )
+        );
+      })
+      .then(() =&gt; self.skipWaiting())
+      .catch(err =&gt; {
+        console.error('安装失败:', err);
+        self.skipWaiting();
+      })
+  );
+});
+// 激活阶段：清理旧缓存
+self.addEventListener('activate', (event) =&gt; {
+  event.waitUntil(
+    caches.keys().then(keys =&gt; 
+      Promise.all(keys.map(key =&gt; 
+        key !== CACHE_NAME &amp;&amp; caches.delete(key)
+      ))
+    ).then(() =&gt; self.clients.claim())
+  );
+});
+// 请求处理：智能缓存策略
+self.addEventListener('fetch', event =&gt; {
+  const { request } = event;
+  const url = new URL(request.url);
+  // 安全过滤
+  if (!VALID_SCHEMES.includes(url.protocol)) return;
+  // 缓存策略路由
+  event.respondWith(
+    cacheFirstWithUpdate(request)
+  );
+});
+// 核心缓存策略
+async function cacheFirstWithUpdate(request) {
+  try {
+    // 优先返回缓存
+    const cached = await caches.match(request);
+    if (cached) return cached;
+    // 网络请求
+    const netRes = await fetch(request);
+    // 动态缓存
+    if (shouldCache(request, netRes)) {
+      cachePut(request, netRes.clone());
+    }
+    return netRes;
+  } catch (err) {
+    // 离线回退
+    return handleOffline(request);
+  }
+}
+// 缓存条件判断
+function shouldCache(req, res) {
+  const url = new URL(req.url);
+  return res.status === 200 &amp;&amp;
+    (STATIC_EXTS.some(ext =&gt; url.pathname.endsWith(`.${ext}`)) ||
+     UPLOAD_PATHS.some(path =&gt; url.pathname.startsWith(path)));
+}
+// 安全存储
+async function cachePut(req, res) {
+  try {
+    const cache = await caches.open(CACHE_NAME);
+    await cache.put(req, res);
+  } catch (err) {
+    console.error('缓存存储失败:', req.url, err);
+  }
+}
+// 离线处理
+async function handleOffline(req) {
+  if (req.destination === 'document') {
+    return (await caches.match(OFFLINE_URL)) || Response.redirect(OFFLINE_URL);
+  }
+  return new Response('', { 
+    status: 503,
+    headers: { 'Content-Type': 'text/html' } 
+  });
+}</code></pre>
+
+
+
+<ul class="wp-block-list">
+<li>在网站根目录下创建 offline.html，具体的代码如下：</li>
+</ul>
+
+
+
+<pre class="wp-block-code"><code lang="markup" class="language-markup">&lt;!-- 创建/offline.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;离线模式&lt;/title&gt;
+  &lt;meta charset="utf-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;您处于离线状态，部分内容可能无法显示&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+
+
+<ul class="wp-block-list">
+<li>在主题的header.php文件加入以下代码：</li>
+</ul>
+
+
+
+<pre class="wp-block-code"><code lang="javascript" class="language-javascript">&lt;script&gt;
+// 移动端检测函数（综合 UA 和屏幕尺寸）
+function isMobile() {
+  const ua = navigator.userAgent;
+  const isMobileUA = /Android|iPhone|iPad|iPod|Windows Phone/i.test(ua);
+  const isMobileScreen = window.matchMedia('(max-width: 768px)').matches;
+  return isMobileUA || isMobileScreen;
+}
+// Service Worker 注册控制
+if ('serviceWorker' in navigator &amp;&amp; !isMobile()) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(reg =&gt; console.log('SW 已注册:', reg))
+    .catch(err =&gt; console.error('SW 注册失败:', err));
+} else if (isMobile()) {
+  // 强制注销移动端可能存在的旧 SW
+  navigator.serviceWorker.getRegistrations().then(registrations =&gt; {
+    registrations.forEach(reg =&gt; reg.unregister());
+    console.log('已禁用移动端 Service Worker');
+  });
+}
+&lt;/script&gt;</code></pre>
+
+
+
+<p>一切添加完毕后，打开首页（建议清除一下缓存），按F12键--Application--Service Workers，如果没有报错，Status显示小绿圆的话，说明就OK了，当然以上代码我在目前用的主题是可以的，不代表其它主题就没有问题，另外加了Service Worekers能不能明显提升加载速度，这个还得再使用一段时间看看，个人感觉不是很明显（这个主题用起来本身也不是很慢，VPS线路好的话更加没的说），所以是骡子是马，还得拉出来溜溜不是嘛。</p>
+</div> <!-- 评论 --> <div id="artalk-container" class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700"> <div id="Comments"></div> </div> <!-- Artalk 样式与脚本 --> <link href="https://my-blog.s3.bitiful.net/Artalk/Artalk.css" rel="stylesheet"> <script src="https://my-blog.s3.bitiful.net/Artalk/Artalk.js"></script> <script>
+  function initArtalk() {
+    const container = document.querySelector('#Comments');
+    if (!container) return;
+
+    if (window.artalk) {
+      window.artalk.destroy();
+    }
+
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    // 初始化 Artalk
+    window.artalk = Artalk.init({
+      el: '#Comments',
+      pageKey: window.location.pathname,
+      pageTitle: document.title,
+      server: 'https://talk.057000.xyz',
+      site: '方糖博客',
+      darkMode: isDark,
+      // 增加调试模式，方便在控制台看到更多信息
+      pv: true
+    });
+  }
+
+  // 适配 Astro 生命周期
+  document.addEventListener('astro:page-load', initArtalk);
+  
+  // 确保首次加载也执行
+  if (document.readyState === 'complete') {
+    initArtalk();
+  } else {
+    window.addEventListener('load', initArtalk);
+  }
+
+  // 主题切换监听
+  const observer = new MutationObserver(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (window.artalk) window.artalk.setDarkMode(isDark);
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+</script> </article> </main> <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-gray-500 text-sm"> <p>&copy; 2012-2026 方糖博客 · 基于 Astro + WordPress</p> <p><span class="mobile-hide"> <a href="https://icp.gov.moe/?keyword=20229988" target="_blank">萌ICP备20229988号</a> · 托管于：<a href="https://hostdzire.com/billing/index.php" target="_blank" rel="nofollow"> HostDZire </a> · 使用<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="nofollow"> 又拍云 </a></span></p> </footer> <button id="back-to-top" style="display: none;" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary/80 transition-all z-50 items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg> </button> <script>
+      (function() {
+        const themeToggle = () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          updateIcons();
+        };
+        const updateIcons = () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          const sun = document.getElementById('sun-icon');
+          const moon = document.getElementById('moon-icon');
+          if (sun) sun.classList.toggle('hidden', !isDark);
+          if (moon) moon.classList.toggle('hidden', isDark);
+        };
+        document.getElementById('theme-toggle')?.addEventListener('click', themeToggle);
+        updateIcons();
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.toggle('hidden'));
+        const btt = document.getElementById('back-to-top');
+        if (btt) {
+          window.addEventListener('scroll', () => {
+            if (window.innerWidth >= 768 && window.pageYOffset > 300) btt.style.display = 'flex';
+            else btt.style.display = 'none';
+          });
+          btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      })();
+    </script> </body> </html>

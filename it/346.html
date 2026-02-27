@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://fangtang.net/it/346.html"><title>Typecho 升级到最新版本以支持表格喽 | 方糖博客</title><meta name="description" content="前言 今天群里有同学提到 typecho 最新版本已经有 1.1-beta 版本可用，而且 typecho 最 [&#38;hellip;]
+"><script>
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script><link rel="stylesheet" href="/_astro/_slug_.D6w0NibI.css"><script type="module" src="/_astro/page.V2R8AmkL.js"></script></head> <body class="min-h-screen bg-white dark:bg-dark text-gray-900 dark:text-gray-100 transition-colors flex flex-col"> <header class="sticky top-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800"> <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"> <a href="/" class="text-xl font-bold hover:text-primary">方糖博客</a> <nav class="hidden md:flex items-center gap-4"> <a href="/" class="hover:text-primary">首页</a> <div class="relative group"> <button class="hover:text-primary flex items-center gap-1">分类 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button> <div class="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"> <a href="/say.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">说说</a> <a href="/it.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">IT 技术</a> <a href="/my.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">生活点滴</a> </div> </div> <a href="/tags.html" class="hover:text-primary">标签</a> <a href="/archive.html" class="hover:text-primary">归档</a><a href="/guestbook.html" class="hover:text-primary">留言</a><a href="/about.html" class="hover:text-primary">关于</a> <a href="/rss.xml" class="p-2 hover:text-primary" title="RSS"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg> </a> <a href="/search.html" class="p-2 hover:text-primary" title="搜索"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> </a> <button id="theme-toggle" class="p-2 hover:text-primary" title="切换主题"> <svg id="sun-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><path d="M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg> <svg id="moon-icon" class="w-5 h-5 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </nav> <div class="flex md:hidden items-center gap-2"> <a href="/search.html" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a> <button id="mobile-menu-btn" class="p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button> </div> </div> <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800 p-4 space-y-2 text-center"> <a href="/" class="block py-2">首页</a> <a href="/say.html" class="block py-2">说说</a> <a href="/it.html" class="block py-2">IT 技术</a> <a href="/my.html" class="block py-2">生活点滴</a> <a href="/tags.html" class="block py-2">标签</a> <a href="/archive.html" class="block py-2">归档</a><a href="/guestbook.html" class="block py-2">留言</a><a href="/about.html" class="block py-2">关于</a> </div> </header> <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full"> <article> <!-- 文章头部 --> <header class="mb-8"> <h1 class="text-3xl font-bold mb-4">Typecho 升级到最新版本以支持表格喽</h1> <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400"> <time datetime="2016-12-09T13:55:00"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 2016年12月9日 </time> <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs"> IT网络 </span> </div> </header> <!-- 文章内容 --> <div class="prose dark:prose-invert max-w-none"><p>前言</p>
+<p>今天群里有同学提到 typecho 最新版本已经有 1.1-beta 版本可用，而且 typecho 最新版本支持更丰富的 markdown 语法（泪流满面的发现支持了表格！）。<br />那么问题来了，如何升级到 typecho 的最新版本代码？如果有同学改动了源码又如何处理？<br />升级到最新版本</p>
+<p>官方网站已经有详细的说明，这里稍微总结如下：</p>
+<blockquote>
+<p>下载</p>
+</blockquote>
+<p>首先，下载最新的版本代码，那么这里就有两个地方可以下载：<br />第一个是官方的打包版本<a href="https://liyuans.com/t/aHR0cDovL3R5cGVjaG8ub3JnLw==">下载地址</a><br />第二个是一般开源的东西会在 <a href="https://liyuans.com/t/aHR0cHM6Ly9naXRodWIuY29tL3R5cGVjaG8vdHlwZWNobw==">github</a> 上有一份源码，在那里往往可以找到最新的版本也就是 <a href="https://liyuans.com/t/aHR0cHM6Ly9naXRodWIuY29tL3R5cGVjaG8vdHlwZWNoby9hcmNoaXZlL21hc3Rlci56aXA=">typecho 的 beta</a> 版本或者 <a href="https://liyuans.com/t/aHR0cHM6Ly9naXRodWIuY29tL3R5cGVjaG8vdHlwZWNoby9hcmNoaXZlL3YxLjEtMTUuNS4xMi1iZXRhLnppcA==">typecho 的 pre-release</a>。<br />如果后者存在则建议下载后者，不过想尝鲜的同学不妨下载 beta 版本，比如刚刚放出的 <a href="https://liyuans.com/t/aHR0cHM6Ly9naXRodWIuY29tL3R5cGVjaG8vdHlwZWNoby9hcmNoaXZlL3YxLjEtMTUuNS4xMi1iZXRhLnppcA==">typecho-1.1-beta</a> 版本就有劲爆的 markdown 功能，估计可以俘获很多站长的心。<br />1、删除服务器上的旧文件，请在服务器上删除如下目录和文件:</p>
+<pre><code>/admin/
+/var/
+/index.php</code></pre>
+<p>注意：请千万不要删除 /usr/ 目录，因为这个目录包含了你的主题，插件和上传的文件，它无需被升级<br />完成升级后排错</p>
+<p>当你没有进行下面的步骤时，访问前台页面可能回出现错误提示，请不要管他们，直接访问你的 admin 页面，按提示完成升级即可恢复正常。<br />用一个具有管理员权限的用户登录后台，系统会提示检测到新版本需要升级，点击完成升级按钮即可完成升级。<br />注意：如果在升级完成后，进入首页出现 500 或其他错误，请进入 admin 页面禁用所有的插件，并启用默认模板。如果正常，请逐步排查插件或模板存在的问题。</p>
+<blockquote>
+<p>如何合并源码？</p>
+</blockquote>
+<p>有的同学由于需要定制一些特殊的功能，需要改动源码，那么这个时候就不能按照官方的文档进行简单覆盖了，那么怎么处理呢？<br />如果没有使用 git 或者 svn 等版本管理软件，则将代码 down 到本地，使用 file compare 等文件比较工具比较目录，需要比较的目录清单：</p>
+<pre><code>/admin/
+/var/
+/index.php</code></pre>
+<p>比较完以后，将代码直接上传覆盖，或者按照第一部分的步骤删除文件目录后再上传，之后按照官方给出的办法进行排错。<br />如果使用 git 或者 svn，其实本质上没有多大的区别，只是利用 git 或者 svn 的文件比较特性而已。对于 coder 来说是一件很 easy 的事情。</p>
+<blockquote>
+<p>写在最后</p>
+</blockquote>
+<p>如果您在使用 typecho 过程或者升级过程，可以把问题提交到邮件列表，你的参与对改善 typecho 很有帮助。<br />一个表格实例</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">显示效果:</p>
+<table>
+<thead>
+<tr>
+<th align="left">友链</th>
+<th align="left">描述</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://i-ebs.com/">Leonn</a></td>
+<td align="left">ERP学习</td>
+<td align="left">工作博客</td>
+</tr>
+</tbody>
+</table>
+<p>Markdown 内容:</p>
+<pre><code></th>
+<th style="text-align: left;">友链</th>
+<th style="text-align: left;">描述</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="https://i-ebs.com/">Leonn</a></td>
+<td style="text-align: left;">ERP学习</td>
+<td style="text-align: left;">工作博客</td>
+<td></code></pre>
+<p>文章主要内容来自 <a href="https://liyuans.com/t/aHR0cHM6Ly93d3cudHlwZWNob2Rldi5jb20vaW5kZXgucGhwL2FyY2hpdmVzLzc0NS8=">TypechoDev</a></td>
+</tr>
+</tbody>
+</table>
+</div> <!-- 评论 --> <div id="artalk-container" class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700"> <div id="Comments"></div> </div> <!-- Artalk 样式与脚本 --> <link href="https://my-blog.s3.bitiful.net/Artalk/Artalk.css" rel="stylesheet"> <script src="https://my-blog.s3.bitiful.net/Artalk/Artalk.js"></script> <script>
+  function initArtalk() {
+    const container = document.querySelector('#Comments');
+    if (!container) return;
+
+    if (window.artalk) {
+      window.artalk.destroy();
+    }
+
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    // 初始化 Artalk
+    window.artalk = Artalk.init({
+      el: '#Comments',
+      pageKey: window.location.pathname,
+      pageTitle: document.title,
+      server: 'https://talk.057000.xyz',
+      site: '方糖博客',
+      darkMode: isDark,
+      // 增加调试模式，方便在控制台看到更多信息
+      pv: true
+    });
+  }
+
+  // 适配 Astro 生命周期
+  document.addEventListener('astro:page-load', initArtalk);
+  
+  // 确保首次加载也执行
+  if (document.readyState === 'complete') {
+    initArtalk();
+  } else {
+    window.addEventListener('load', initArtalk);
+  }
+
+  // 主题切换监听
+  const observer = new MutationObserver(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (window.artalk) window.artalk.setDarkMode(isDark);
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+</script> </article> </main> <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center text-gray-500 text-sm"> <p>&copy; 2012-2026 方糖博客 · 基于 Astro + WordPress</p> <p><span class="mobile-hide"> <a href="https://icp.gov.moe/?keyword=20229988" target="_blank">萌ICP备20229988号</a> · 托管于：<a href="https://hostdzire.com/billing/index.php" target="_blank" rel="nofollow"> HostDZire </a> · 使用<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="nofollow"> 又拍云 </a></span></p> </footer> <button id="back-to-top" style="display: none;" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary/80 transition-all z-50 items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg> </button> <script>
+      (function() {
+        const themeToggle = () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          updateIcons();
+        };
+        const updateIcons = () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          const sun = document.getElementById('sun-icon');
+          const moon = document.getElementById('moon-icon');
+          if (sun) sun.classList.toggle('hidden', !isDark);
+          if (moon) moon.classList.toggle('hidden', isDark);
+        };
+        document.getElementById('theme-toggle')?.addEventListener('click', themeToggle);
+        updateIcons();
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.toggle('hidden'));
+        const btt = document.getElementById('back-to-top');
+        if (btt) {
+          window.addEventListener('scroll', () => {
+            if (window.innerWidth >= 768 && window.pageYOffset > 300) btt.style.display = 'flex';
+            else btt.style.display = 'none';
+          });
+          btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      })();
+    </script> </body> </html>
