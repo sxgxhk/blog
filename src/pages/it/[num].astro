@@ -1,0 +1,66 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getPostsByCategory, formatDate, extractSlug , cleanExcerpt, stripHtml} from '../../lib/wp';
+
+export async function getStaticPaths() {
+  const categories = [
+    { slug: 'say', name: '说说', id: 1 },
+    { slug: 'it', name: 'IT技术', id: 2 },
+    { slug: 'my', name: '生活点滴', id: 3 }
+  ];
+  
+  const paths = [];
+  
+  for (const cat of categories) {
+    const posts = await getPostsByCategory(cat.id);
+    const perPage = 8;
+    const totalPages = Math.ceil(posts.length / perPage);
+    
+    // 分页 (从第2页开始)
+    for (let i = 2; i <= totalPages; i++) {
+      paths.push({
+        params: { num: i.toString() },
+        props: { cat, posts: posts.slice((i-1)*perPage, i*perPage), currentPage: i, totalPages, perPage }
+      });
+    }
+  }
+  
+  return paths;
+}
+
+const { cat, posts, currentPage, totalPages, perPage } = Astro.props;
+---
+
+<Layout title={`${cat.name} - 第${currentPage}页`} description={`方糖博客 - ${cat.name}`}>
+  <div class="mb-8">
+    <h1 class="text-2xl font-bold mb-2">分类: {cat.name}</h1>
+    <p class="text-gray-500">共 {totalPages * perPage} 篇</p>
+  </div>
+  
+  <div class="space-y-6">
+    {posts.map((post) => (
+      <article class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+        <h2 class="text-xl font-bold mb-2">
+          <a href={`/${extractSlug(post.link)}.html`} class="hover:text-primary transition-colors">
+            <Fragment set:html={post.title.rendered} />
+          </a>
+        </h2>
+        <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-3">
+          <time datetime={post.date}>{formatDate(post.date)}</time>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 line-clamp-6">{post.content?.rendered ? stripHtml(post.content.rendered).substring(0, 400) + "..." : ""}</p>
+        <div class="flex justify-end mt-3">
+          <a href={`/${extractSlug(post.link)}.html`} class="text-primary hover:underline">阅读全文 →</a>
+        </div>
+      </article>
+    ))}
+  </div>
+  
+  <div class="flex justify-center items-center gap-2 mt-8">
+    <a href={currentPage === 2 ? `/${cat.slug}.html` : `/${cat.slug}/${currentPage - 1}.html`} class="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded hover:bg-primary hover:text-white">上一页</a>
+    <span class="px-4 py-2 text-gray-500">{currentPage} / {totalPages}</span>
+    {currentPage < totalPages && (
+      <a href={`/${cat.slug}/${currentPage + 1}.html`} class="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded hover:bg-primary hover:text-white">下一页</a>
+    )}
+  </div>
+</Layout>

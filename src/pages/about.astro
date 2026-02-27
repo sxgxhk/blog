@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Twikoo from '../components/Twikoo.astro';
+import { getPageBySlug } from '../lib/wp';
+
+// 获取关于页面内容
+const page = await getPageBySlug('about');
+---
+
+<Layout title={page?.title.rendered || "关于"} description="关于方糖博客">
+  <div class="mb-8">
+    <h1 class="text-3xl font-bold mb-4" set:html={page?.title.rendered || "关于"} />
+  </div>
+  
+  <!-- 页面内容 -->
+  {page ? (
+    <div class="prose dark:prose-invert max-w-none mb-12" set:html={page.content.rendered} />
+  ) : (
+    <p class="text-gray-500">正在努力加载中...</p>
+  )}
+  
+  <!-- Artalk 评论区 -->
+  <div class="mt-12">
+    <Twikoo path="/about" />
+  </div>
+</Layout>

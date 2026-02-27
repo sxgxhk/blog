@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getAllPosts, formatDate, extractSlug, stripHtml } from '../lib/wp';
+
+const allPosts = await getAllPosts();
+const searchIndex = allPosts.map(post => ({
+  title: stripHtml(post.title.rendered),
+  content: stripHtml(post.content.rendered).substring(0, 500),
+  link: `/${extractSlug(post.link)}.html`,
+  date: post.date
+}));
+
+const query = Astro.url.searchParams.get('q') || '';
+---
+
+<Layout title={query ? `搜索: ${query}` : "搜索"}>
+  <div class="mb-8">
+    <h1 class="text-2xl font-bold mb-4">搜索文章</h1>
+    <div class="flex gap-2 mb-8">
+      <input id="search-input" type="text" value={query} placeholder="输入关键词搜索..." class="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-800 dark:text-white focus:outline-none focus:border-primary text-lg" />
+      <button id="search-btn" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors">搜索</button>
+    </div>
+    <p id="results-count" class="text-gray-500 mb-4" style="display: none"></p>
+  </div>
+  <div id="results-container" class="space-y-6"></div>
+  <div id="no-results" class="hidden text-center py-12"><p class="text-gray-500 text-lg">没有找到相关文章</p></div>
+</Layout>
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+<script define:vars={{ searchIndex, query }}>
+  (function() {
+    const input = document.getElementById('search-input');
+    const btn = document.getElementById('search-btn');
+    const container = document.getElementById('results-container');
+    const count = document.getElementById('results-count');
+    const none = document.getElementById('no-results');
+
+    const handleSearch = () => {
+      const val = input.value.trim();
+      if (val) {
+        // Handle both clean paths and .html paths
+        const currentPath = window.location.pathname;
+        const targetPath = currentPath.endsWith('.html') ? currentPath : currentPath + '.html';
+        window.location.href = targetPath + '?q=' + encodeURIComponent(val);
+      }
+    };
+
+    if (btn) btn.onclick = handleSearch;
+    if (input) input.onkeydown = (e) => { if (e.key === 'Enter') handleSearch(); };
+
+    const startSearch = () => {
+      // Robust query extraction
+      const urlParams = new URLSearchParams(window.location.search);
+      const q = urlParams.get('q') || query;
+      
+      if (!q || !window.Fuse) return;
+      
+      const fuse = new Fuse(searchIndex, { keys: ['title', 'content'], threshold: 0.3 });
+      const results = fuse.search(q);
+      
+      if (count) {
+        count.style.display = 'block';
+        count.textContent = `找到 ${results.length} 篇相关文章`;
+      }
+      
+      if (results.length === 0) {
+        if (none) none.classList.remove('hidden');
+      } else {
+        if (container) {
+          container.classList.remove('hidden');
+          container.innerHTML = results.map(r => `
+            <article class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6">
+              <h2 class="text-xl font-bold mb-2"><a href="${r.item.link}" class="hover:text-primary">${r.item.title}</a></h2>
+              <p class="text-gray-600 dark:text-gray-300 line-clamp-3">${r.item.content}...</p>
+            </article>
+          `).join('');
+        }
+      }
+    };
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', startSearch);
+    else startSearch();
+  })();
+</script>

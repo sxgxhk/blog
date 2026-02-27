@@ -1,0 +1,52 @@
+---
+const { path = "" } = Astro.props;
+---
+<div id="artalk-container" class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+  <div id="Comments"></div>
+</div>
+
+<!-- Artalk 样式与脚本 -->
+<link href="https://my-blog.s3.bitiful.net/Artalk/Artalk.css" rel="stylesheet" />
+<script is:inline src="https://my-blog.s3.bitiful.net/Artalk/Artalk.js"></script>
+
+<script is:inline>
+  function initArtalk() {
+    const container = document.querySelector('#Comments');
+    if (!container) return;
+
+    if (window.artalk) {
+      window.artalk.destroy();
+    }
+
+    const isDark = document.documentElement.classList.contains('dark');
+    
+    // 初始化 Artalk
+    window.artalk = Artalk.init({
+      el: '#Comments',
+      pageKey: window.location.pathname,
+      pageTitle: document.title,
+      server: 'https://talk.057000.xyz',
+      site: '方糖博客',
+      darkMode: isDark,
+      // 增加调试模式，方便在控制台看到更多信息
+      pv: true
+    });
+  }
+
+  // 适配 Astro 生命周期
+  document.addEventListener('astro:page-load', initArtalk);
+  
+  // 确保首次加载也执行
+  if (document.readyState === 'complete') {
+    initArtalk();
+  } else {
+    window.addEventListener('load', initArtalk);
+  }
+
+  // 主题切换监听
+  const observer = new MutationObserver(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (window.artalk) window.artalk.setDarkMode(isDark);
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+</script>

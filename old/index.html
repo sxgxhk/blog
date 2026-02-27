@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordPress 资讯</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">📰 WordPress</h1>
+            <nav class="nav">
+                <a href="#" class="nav-link active" data-category="all">全部</a>
+                <a href="#" class="nav-link" data-category="it">IT网络</a>
+                <a href="#" class="nav-link" data-category="my">生活随笔</a>
+                <a href="#" class="nav-link" data-category="say">说说</a>
+                <a href="#" class="nav-link" data-page="archives">📅 归档</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- 加载状态 -->
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>加载中...</p>
+            </div>
+
+            <!-- 文章列表 -->
+            <div id="newsList" class="news-grid"></div>
+            
+            <!-- 归档页 -->
+            <div id="archivesList" class="archives-list" style="display:none;"></div>
+            
+            <!-- 分页 -->
+            <div id="pagination" class="pagination"></div>
+        </div>
+    </main>
+
+    <!-- 文章详情弹窗 -->
+    <div id="articleModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div id="articleContent"></div>
+            <!-- Twikoo 评论 -->
+            <div id="twikoo"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Powered by WordPress | <a href="https://fangtang.net" target="_blank">访问源站</a></p>
+        </div>
+    </footer>
+
+    <script src="https://twikoo.iblue.eu.org/js/twikoo.all.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

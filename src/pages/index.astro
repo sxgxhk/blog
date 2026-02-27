@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getAllPosts, formatDate, extractSlug , cleanExcerpt, stripHtml} from '../lib/wp';
+
+const allPosts = await getAllPosts();
+const perPage = 8;
+const totalPages = Math.ceil(allPosts.length / perPage);
+const posts = allPosts.slice(0, perPage);
+const currentPage = 1;
+---
+
+<Layout title="首页" description="方糖博客">
+  <div class="space-y-6">
+    {posts.map((post) => (
+      <article class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+        <h2 class="text-xl font-bold mb-2">
+          <a href={`/${extractSlug(post.link)}.html`} class="hover:text-primary transition-colors">
+            <Fragment set:html={post.title.rendered} />
+          </a>
+        </h2>
+        <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-3">
+          <time datetime={post.date}>{formatDate(post.date)}</time>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 line-clamp-6">{post.content?.rendered ? stripHtml(post.content.rendered).substring(0, 400) + "..." : ""}</p>
+        <div class="flex justify-end mt-3">
+          <a href={`/${extractSlug(post.link)}.html`} class="text-primary hover:underline">阅读全文 →</a>
+        </div>
+      </article>
+    ))}
+  </div>
+  
+  {totalPages > 1 && (
+    <div class="flex justify-center items-center gap-2 mt-8">
+      <span class="px-4 py-2 text-gray-500">{currentPage} / {totalPages}</span>
+      <a href="/page/2.html" class="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded hover:bg-primary hover:text-white">下一页</a>
+    </div>
+  )}
+</Layout>

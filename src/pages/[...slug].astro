@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Twikoo from '../components/Twikoo.astro';
+import { getAllPosts, formatDate, extractSlug, stripHtml } from '../lib/wp';
+
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+  
+  return posts.map((post) => {
+    // 提取 slug: https://fangtang.net/say/1651.html -> say/1651
+    const match = post.link.match(/fangtang\.net\/(.+)\.html/);
+    const slug = match ? match[1] : post.slug;
+    
+    return {
+      params: { slug },  // Astro 会自动添加 .html
+      props: { post }
+    };
+  });
+}
+
+const { post } = Astro.props;
+const categories = post._embedded?.['wp:term']?.[0] || [];
+const categoryName = categories[0]?.name || '未分类';
+const pageSlug = Astro.params.slug || '';
+---
+
+<Layout 
+  title={post.title.rendered} 
+  description={stripHtml(post.excerpt.rendered)}
+>
+  <article>
+    <!-- 文章头部 -->
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold mb-4" set:html={post.title.rendered} />
+      
+      <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+        <time datetime={post.date}>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          {formatDate(post.date)}
+        </time>
+        
+        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs">
+          {categoryName}
+        </span>
+      </div>
+    </header>
+
+    <!-- 文章内容 -->
+    <div class="prose dark:prose-invert max-w-none" set:html={post.content.rendered} />
+    
+    <!-- 评论 -->
+    <Twikoo path={`/${pageSlug}`} />
+  </article>
+</Layout>

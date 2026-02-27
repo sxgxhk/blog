@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Twikoo from '../components/Twikoo.astro';
+import { getPageBySlug } from '../lib/wp';
+
+// 获取留言板页面内容
+const page = await getPageBySlug('guestbook');
+---
+
+<Layout title={page?.title.rendered || "留言板"} description="方糖博客留言板">
+  <div class="mb-8">
+    <h1 class="text-3xl font-bold mb-4" set:html={page?.title.rendered || "留言板"} />
+  </div>
+  
+  <!-- 页面内容 -->
+  {page ? (
+    <div class="prose dark:prose-invert max-w-none mb-12" set:html={page.content.rendered} />
+  ) : (
+    <div class="mb-12">
+      <p class="text-gray-500">有什么想说的，就在这里留言吧~</p>
+    </div>
+  )}
+  
+  <!-- Artalk 评论区 -->
+  <div class="mt-12">
+    <Twikoo path="/guestbook" />
+  </div>
+</Layout>
